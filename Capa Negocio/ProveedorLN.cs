@@ -23,11 +23,11 @@ namespace Capa_Negocio
 		}
 		#endregion
 
-		public List<RepProveedor> ListarMedicamento()
+		public List<RepProveedor> ListarRepProveedores()
 		{
 			try
 			{
-				return ProveedorDAO.GetInstance().ListarProveedores();
+				return ProveedorDAO.GetInstance().ListarRepProveedores();
 			}
 			catch (Exception ex)
 			{

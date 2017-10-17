@@ -266,7 +266,8 @@ function PrintModal() {
 	$("#txtPrtMonto").val(monto);
 	$("#txtPrtIgv").val(igv);
 	$("#txtPrtMontoTotal").val(montototal);
-	$("#nroVenta").text(idventa);
+    $("#nroVenta").text(idventa);
+    $("#prtTableDetalleVenta").empty();
 	copiarTablaDetalle('tabladetalleventa', 'prtTableDetalleVenta', 0, 1, 2, 3, 4)
 	$("#printVenta").printThis();
 };

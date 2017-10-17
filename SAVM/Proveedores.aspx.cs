@@ -21,10 +21,10 @@ namespace SAVM
 		}
 
 		[WebMethod]
-		public static List<RepProveedor> ListarProveedores()
+		public static List<RepProveedor> ListarRepProveedores()
 		{
 			List<RepProveedor> Lista = null;
-			Lista = ProveedorLN.GetInstance().ListarMedicamento();
+			Lista = ProveedorLN.GetInstance().ListarRepProveedores();
 			return Lista;
 		}
 	}

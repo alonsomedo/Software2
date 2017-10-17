@@ -248,7 +248,7 @@ $("#btnBuscarProveedor").click(function (e) {
 function ListarProveedoresOC() {
 	$.ajax({
 		type: "POST",
-		url: "Proveedores.aspx/ListarProveedores",
+        url: "Proveedores.aspx/ListarRepProveedores",
 		data: {},
 		contentType: "application/json",
 		error: function (xhr, ajaxOptions, thrownError) {

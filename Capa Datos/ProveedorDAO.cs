@@ -24,7 +24,7 @@ namespace Capa_Datos
 		}
 		#endregion
 
-		public List<RepProveedor> ListarProveedores()
+		public List<RepProveedor> ListarRepProveedores()
 		{
 			List<RepProveedor> lista = new List<RepProveedor>();
 

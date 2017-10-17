@@ -214,7 +214,9 @@
 
 		<!-- AdminLTE App -->
 	<script src="plugins/AdminLTE/app.min.js"></script>
-	<!-- Scripts del sistema -->
+	<!-- DataTables -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+     <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 	<asp:ContentPlaceHolder id="footer" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

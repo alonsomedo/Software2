@@ -82,6 +82,9 @@
     <Content Include="Index.aspx" />
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
+    <Content Include="js\RegistrarIncidente.js" />
+    <Content Include="plugins\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="plugins\datatables\jquery.dataTables.min.js" />
     <Content Include="plugins\printThis.js" />
     <Content Include="Login.aspx" />
     <Content Include="Medicamentos.aspx" />
@@ -116,8 +119,6 @@
     <Content Include="plugins\bootstrap\js\bootstrap.js" />
     <Content Include="plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="plugins\bootstrap\js\npm.js" />
-    <Content Include="plugins\datatables\dataTables.bootstrap.js" />
-    <Content Include="plugins\datatables\jquery.dataTables.js" />
     <Content Include="plugins\jquery\jquery-3.2.1.js" />
     <Content Include="plugins\jquery\jquery-3.2.1.min.js" />
     <Content Include="Proveedores.aspx" />

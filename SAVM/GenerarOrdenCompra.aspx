@@ -172,7 +172,7 @@
 			</div>
 		</div>
 
-		<!-- Modal Proveedores-->
+		<!-- Start: Modal Proveedores-->
 		<div class="modal fade" id="modalProveedores" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content modal-lg" style="overflow:auto;height:600px">
@@ -214,7 +214,7 @@
 				</div>
 			</div>
 		</div>
-
+    <!-- End: Modal Proveedores-->
 	<!--Start Modal: Imprimir -->
     <div class="modal fade" id="modalPrintOC" role="dialog">
         <div class="modal-dialog">
