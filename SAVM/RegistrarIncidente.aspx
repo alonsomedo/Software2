@@ -25,7 +25,7 @@
                                 <label>RUC:</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" id="txtRucProveedor">
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                                 <label>Razón Social:</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="txtRazonSocial">
                             </div>
                         </div>
                         <br />
@@ -45,7 +45,7 @@
                                 <label>Contacto:</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="txtContacto">
                             </div>
                         </div>
                     </div>

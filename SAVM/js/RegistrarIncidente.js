@@ -1,6 +1,9 @@
 ﻿$("#btnBuscarProveedor").click(function (e) {
     e.preventDefault();
     ListarProveedoresIN();
+    //Se destruye para evitar error de doble instancia
+    var tabla = $("#tblProveedoresIN").DataTable();
+    tabla.destroy();
 });
 
 
@@ -14,7 +17,15 @@ function ListarProveedoresIN() {
             console.log(respuesta);
             var data = respuesta.d;
             var btnAgregar = "<button id='btnAgregarProveedor' type='button' class='btn btn-success btn-md' style='color:white;'>Agregar</button>";
-            tabla = $("#tblProveedoresIN").DataTable();
+            tabla = $("#tblProveedoresIN").DataTable({
+
+                "pagingType": "numbers",
+                "language": {
+                    "search": "Buscar: ",
+                    "searchPlaceholder": "Ingrese el nombre del medicamento",
+                    "lengthMenu": "Mostrar _MENU_ Primeros Resultados",
+                }
+            });
             tabla.clear();    //Limpia la tabla
             for (var i = 0; i < data.length; i++) {
                 tabla.row.add([
@@ -39,8 +50,10 @@ function ListarProveedoresIN() {
 $("#tblProveedoresIN").on('click', '#btnAgregarProveedor', function (e) {
     e.preventDefault();
     var fila = $(this).closest('tr');
-    $("#txtrucOC").val(fila.find('td:eq(0)').text());
-    $("#txtrazonsocialOC").val(fila.find('td:eq(1)').text());
-    $("#txtcontactoOC").val(fila.find('td:eq(5)').text());
+    $("#txtIdProv").val(fila.find('td:eq(4)').text());
+    $("#txtRucProveedor").val(fila.find('td:eq(0)').text());
+    $("#txtRazonSocial").val(fila.find('td:eq(1)').text());
+    $("#txtContacto").val(fila.find('td:eq(5)').text());  
     $('#modalProveedores').modal('toggle');
+
 });
