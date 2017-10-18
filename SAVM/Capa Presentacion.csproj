@@ -103,6 +103,7 @@
     <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Home.Master" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\savm - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

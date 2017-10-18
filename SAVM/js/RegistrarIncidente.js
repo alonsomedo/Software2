@@ -50,10 +50,32 @@ function ListarProveedoresIN() {
 $("#tblProveedoresIN").on('click', '#btnAgregarProveedor', function (e) {
     e.preventDefault();
     var fila = $(this).closest('tr');
+    var ruc = fila.find('td:eq(0)').text();
     $("#txtIdProv").val(fila.find('td:eq(4)').text());
     $("#txtRucProveedor").val(fila.find('td:eq(0)').text());
     $("#txtRazonSocial").val(fila.find('td:eq(1)').text());
     $("#txtContacto").val(fila.find('td:eq(5)').text());  
     $('#modalProveedores').modal('toggle');
+    CalcularNroIncidentes(ruc);
 
 });
+
+
+
+function CalcularNroIncidentes(ruc) {
+    var obj = JSON.stringify({ _ruc: ruc });
+    $.ajax({
+        type: "POST",
+        url: "Proveedores.aspx/CalcularIncidentesProveedor",
+        data: obj,
+        dataType: "json",
+        contentType: "application/json",
+        success: function (respuesta) {
+            $("#txtNroIncidentes").val(respuesta.d).text();
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+        }
+
+    });
+}

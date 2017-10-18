@@ -1,4 +1,5 @@
-﻿
+﻿var stockmedicamento;
+
 $(document).ready(function () {
 	var hoy = new Date();
 	var dia = hoy.getDate();
@@ -44,7 +45,11 @@ $('body').on('click', '#btnAgregar', function (e) {
 	if ($("#txtcantidad").val() == "" || Number($("#txtcantidad").val()) < 1 || _cantidad != -1) {
 		alert("Ingrese la cantidad del medicamento");
 		return false;
-	}
+    }
+    if ($("#txtcantidad").val() > stockmedicamento) {
+        alert("La cantidad ingresada supera el stock del proudcto");
+        return false;
+    }
 	var codmedicamento = $("#txtcodmedicamento").val();
 	var medicamento = $("#txtnombre").val();
 	var precio = $("#txtprecio").val();
@@ -235,7 +240,8 @@ $("#tablaMedicamentosVenta").on('click', '#btnAgregarMedicamento', function (e) 
 	var fila = $(this).closest('tr');
 	$("#txtcodmedicamento").val(fila.find('td:eq(0)').text());
 	$("#txtnombre").val(fila.find('td:eq(1)').text());
-	$("#txtprecio").val(fila.find('td:eq(2)').text());
+    $("#txtprecio").val(fila.find('td:eq(2)').text());
+    stockmedicamento = fila.find('td:eq(3)');
 	$('#modalMedicamentos').modal('toggle');
 });
 
@@ -250,7 +256,7 @@ $("#btnGrabar").click(function (e) {
 		alert("La venta se grabó exitosamente");
 		RegistrarDetalle();
 		PrintModal();	
-		Limpiar();
+        Limpiar();
 	}
 });
 
@@ -268,7 +274,7 @@ function PrintModal() {
 	$("#txtPrtMontoTotal").val(montototal);
     $("#nroVenta").text(idventa);
     $("#prtTableDetalleVenta").empty();
-	copiarTablaDetalle('tabladetalleventa', 'prtTableDetalleVenta', 0, 1, 2, 3, 4)
+	copiarTablaDetalle('tblDetVenta', 'prtTableDetalleVenta', 0, 1, 2, 3, 4)
 	$("#printVenta").printThis();
 };
 

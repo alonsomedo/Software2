@@ -34,5 +34,17 @@ namespace Capa_Negocio
 				throw ex;
 			}
 		}
-	}
+        public string CalcularIncidentesProveedor(Proveedor objProveedor)
+        {
+            try
+            {
+                return ProveedorDAO.GetInstance().CalcularIncidentesProveedor(objProveedor);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+    }
 }

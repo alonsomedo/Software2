@@ -56,7 +56,7 @@
                                 <label>Incidentes Registrados:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="number" class="form-control">
+                                <input type="number" id="txtNroIncidentes" class="form-control">
                             </div>
                         </div>
                         <br />

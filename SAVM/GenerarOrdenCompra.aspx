@@ -91,14 +91,15 @@
 					</div>
 				</div><br>
 	
-				<table class="table">
+				<table class="table" id="tblDetOC">
 					<thead>
 						<tr>
-							<td>Medicamento</td>
-							<td>PUnitario</td>
-							<td>Cantidad</td>
-							<td>Subtotal</td>
-							<td>Eliminar</td>	
+                            <th>Cod. Med</th>
+							<th>Medicamento</th>
+							<th>PUnitario</th>
+							<th>Cantidad</th>
+							<th>Subtotal</th>
+							<th>Opcion</th>	
 						</tr>
 					</thead>
 					<tbody id="tableDetalleBodyOC">
@@ -240,7 +241,7 @@
                         </div>
                     </div>
                     <div>
-                        <h4>DETALLE DE VENTA </h4>
+                        <h4>DETALLE DE ORDEN DE COMPRA </h4>
                         <br />
                         <table id="prtTableDetalleOC" class="table table-bordered table-hover">
                         </table>

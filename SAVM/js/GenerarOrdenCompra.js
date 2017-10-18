@@ -1,4 +1,7 @@
 ﻿
+var stockmedicamento;
+
+
 $(document).ready(function () {
 	var hoy = new Date();
 	var dia = hoy.getDate();
@@ -44,7 +47,11 @@ $('body').on('click', '#btnAgregarOC', function (e) {
 	if ($("#txtcantidadOC").val() == "" || Number($("#txtcantidadOC").val()) < 1 || _cantidad != -1) {
 		alert("Ingrese la cantidad del medicamento");
 		return false;
-	}
+    }
+    if (Number($("#txtcantidadOC").val())>Number(stockmedicamento)){
+        alert("La cantidad ingresada supera el stock del proudcto");
+        return false;
+    }
 	var codmedicamento = $("#txtcodmedicamentoOC").val();
 	var medicamento = $("#txtnombreOC").val();
 	var precio = $("#txtprecioOC").val();
@@ -236,7 +243,8 @@ $("#tablaMedicamentosOC").on('click', '#btnAgregarMedicamentoOC', function (e) {
 	var fila = $(this).closest('tr');
 	$("#txtcodmedicamentoOC").val(fila.find('td:eq(0)').text());
 	$("#txtnombreOC").val(fila.find('td:eq(1)').text());
-	$("#txtprecioOC").val(fila.find('td:eq(2)').text());
+    $("#txtprecioOC").val(fila.find('td:eq(2)').text());
+    stockmedicamento = fila.find('td:eq(3)');
 	$('#modalMedicamentosOC').modal('toggle');
 });
 
@@ -273,13 +281,19 @@ function ListarProveedoresOC() {
 	});
 }
 
+
+
 $("#tablaProveedoresModal").on('click', '#btnAgregarProveedorLista', function (e) {
 	e.preventDefault();
-	var fila = $(this).closest('tr');
+    var fila = $(this).closest('tr');
 	$("#txtrucOC").val(fila.find('td:eq(0)').text());
 	$("#txtrazonsocialOC").val(fila.find('td:eq(1)').text());
-	$("#txtcontactoOC").val(fila.find('td:eq(5)').text());
-	$('#modalProveedores').modal('toggle');
+    $("#txtcontactoOC").val(fila.find('td:eq(5)').text());
+    $('#modalProveedores').modal('toggle');
+
+
+
+
 });
 
 $("#btnGrabarOC").click(function (e) {
@@ -309,22 +323,22 @@ function PrintModal() {
 	$("#txtPrtMonto").val(monto);
 	$("#txtPrtIgv").val(igv);
 	$("#txtPrtMontoTotal").val(montototal);
-	$("#nroOC").text(codOC);
-	copiarTablaDetalle('tableDetalleBodyOC', 'prtTableDetalleOC', 0, 1, 2, 3, 4)
+    $("#nroOC").text(codOC);
+    $("#prtTableDetalleOC").empty();
+    copiarTablaDetalle('tblDetOC', 'prtTableDetalleOC', 0, 1, 2, 3, 4)
 	$("#printOC").printThis();
-	$("#prtTableDetalleOC").empty();
 };
 
 
 //Copia la tabla detalle a la tabla del modal
 function copiarTablaDetalle(sourceTableId, targetTableId) {
-	var colNos = [].slice.call(arguments, 2),
-		$target = $("#" + targetTableId);
-	$("#" + sourceTableId + " tr").each(function () {
-		var $tds = $(this).children(),
-			$row = $("<tr></tr>");
-		for (var i = 0; i < colNos.length; i++)
-			$row.append($tds.eq(colNos[i]).clone());
-		$row.appendTo($target);
-	});
+    var colNos = [].slice.call(arguments, 2),
+        $target = $("#" + targetTableId);
+    $("#" + sourceTableId + " tr").each(function () {
+        var $tds = $(this).children(),
+            $row = $("<tr></tr>");
+        for (var i = 0; i < colNos.length; i++)
+            $row.append($tds.eq(colNos[i]).clone());
+        $row.appendTo($target);
+    });
 };

@@ -27,5 +27,19 @@ namespace SAVM
 			Lista = ProveedorLN.GetInstance().ListarRepProveedores();
 			return Lista;
 		}
-	}
+
+        [WebMethod]
+        public static string CalcularIncidentesProveedor(long _ruc)
+        {
+            string incidentes = "0";
+            Proveedor objProveedor = new Proveedor()
+            {
+                RUC = _ruc
+            };
+            incidentes = ProveedorLN.GetInstance().CalcularIncidentesProveedor(objProveedor);
+
+            return incidentes;
+        }
+
+    }
 }

@@ -90,18 +90,18 @@
                 </div>
                 <br>
 
-                <table class="table" id="tabladetalleventa">
+                <table class="table" id="tblDetVenta">
                     <thead>
                         <tr>
-                            <td>Cod. Med</td>
-                            <td>Medicamento</td>
-                            <td>PUnitario</td>
-                            <td>Cantidad</td>
-                            <td>Subtotal</td>
-                            <td>Eliminar</td>
+                            <th>Cod. Med</th>
+                            <th>Medicamento</th>
+                            <th>PUnitario</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody id="tabladetalleventa">
                     </tbody>
                 </table>
                 <br>
