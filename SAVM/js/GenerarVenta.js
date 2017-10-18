@@ -46,7 +46,7 @@ $('body').on('click', '#btnAgregar', function (e) {
 		alert("Ingrese la cantidad del medicamento");
 		return false;
     }
-    if ($("#txtcantidad").val() > stockmedicamento) {
+    if (Number($("#txtcantidad").val()) > stockmedicamento) {
         alert("La cantidad ingresada supera el stock del proudcto");
         return false;
     }
@@ -242,7 +242,7 @@ $("#tablaMedicamentosVenta").on('click', '#btnAgregarMedicamento', function (e) 
 	$("#txtnombre").val(fila.find('td:eq(1)').text());
     $("#txtprecio").val(fila.find('td:eq(2)').text());
     stockmedicamento = fila.find('td:eq(3)').text();
-	$('#modalMedicamentos').modal('toggle');
+    $('#modalMedicamentos').modal('toggle');
 });
 
 $("#btnGrabar").click(function (e) {

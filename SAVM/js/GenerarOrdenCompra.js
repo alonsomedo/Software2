@@ -244,7 +244,7 @@ $("#tablaMedicamentosOC").on('click', '#btnAgregarMedicamentoOC', function (e) {
 	$("#txtcodmedicamentoOC").val(fila.find('td:eq(0)').text());
 	$("#txtnombreOC").val(fila.find('td:eq(1)').text());
     $("#txtprecioOC").val(fila.find('td:eq(2)').text());
-    stockmedicamento = fila.find('td:eq(3)');
+    stockmedicamento = fila.find('td:eq(3)').text();
 	$('#modalMedicamentosOC').modal('toggle');
 });
 
