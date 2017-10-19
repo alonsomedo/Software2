@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 using Capa_Entidades;
+using Capa_Negocio;
 
 namespace SAVM
 {
@@ -15,6 +16,17 @@ namespace SAVM
 		{
 
 		}
+
+        [WebMethod]
+        public static List<TipoIncidencia> ListarTipoIncidente()
+        {
+            List<TipoIncidencia> Lista = null;
+
+            Lista = IncidenteLN.GetInstance().ListarTipoIncidente();
+
+            return Lista;
+
+        }
 
 
     }

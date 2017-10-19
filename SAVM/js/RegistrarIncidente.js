@@ -1,4 +1,8 @@
-﻿$("#btnBuscarProveedor").click(function (e) {
+﻿$(document).ready(function () {
+    ListarTipoIncientes();
+});
+
+$("#btnBuscarProveedor").click(function (e) {
     e.preventDefault();
     ListarProveedoresIN();
     //Se destruye para evitar error de doble instancia
@@ -77,5 +81,24 @@ function CalcularNroIncidentes(ruc) {
             console.log(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
         }
 
+    });
+}
+
+function ListarTipoIncientes() {
+    $.ajax({
+        type: "POST",
+        url: "RegistrarIncidente.aspx/ListarTipoIncidente",
+        data: {},
+        contentType: "application/json",
+        success: function (respuesta) {
+            var data = respuesta.d;
+            $('#ddlTipoIncidencia').empty();
+            for (var i = 0; i < data.length; i++)
+            {
+                $('#ddlTipoIncidencia').append(
+                    "<option>" + data[i].Descripcion + "</option>"
+                    );
+            }
+        }
     });
 }

@@ -48,8 +48,9 @@ namespace Capa_Datos
 						PrecioVenta = Convert.ToDecimal(dr[3]),
 						Stock = Convert.ToInt32(dr[4]),
 						StockMinimo = Convert.ToInt32(dr[5]),
-						FechaVencimiento = Convert.ToString(dr[6]),
-						TipoMedicamento = new TipoMedicamento()
+						FechaVencimiento = Convert.ToString(dr[6]).Substring(0,10),
+
+                        TipoMedicamento = new TipoMedicamento()
 						{
 							Descripcion = Convert.ToString(dr[7]),
 						},

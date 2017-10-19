@@ -84,7 +84,7 @@
                     <div class="col-md-4 form-inline">
                         <label>Tipo de Incidente:</label>&nbsp;&nbsp;&nbsp;
 					
-                        <select type="text" class="form-control" style="width: 100px"></select>
+                        <select  id="ddlTipoIncidencia"class="form-control" style="width: 100px"></select>
                     </div>
                     <div class="form-inline col-md-4">
                         <label for="">Fecha:</label>&nbsp;&nbsp;&nbsp;

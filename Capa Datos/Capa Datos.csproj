@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="FacturaProveedorDAO.cs" />
-    <Compile Include="IndicenteProveedorDAO.cs" />
+    <Compile Include="IncidenteProveedorDAO.cs" />
     <Compile Include="MedicamentoDAO.cs" />
     <Compile Include="OrdenCompraDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
