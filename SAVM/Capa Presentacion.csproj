@@ -72,6 +72,8 @@
     <Content Include="css\skins\_all-skins.min.css" />
     <Content Include="GenerarOrdenCompra.aspx" />
     <Content Include="GenerarVenta.aspx" />
+    <Content Include="img\m.jpg" />
+    <Content Include="img\m.png" />
     <Content Include="img\medico.png" />
     <Content Include="img\mundo.jpg" />
     <Content Include="img\mundo2.jpg" />
@@ -85,6 +87,8 @@
     <Content Include="js\RegistrarIncidente.js" />
     <Content Include="plugins\datatables\dataTables.bootstrap.min.js" />
     <Content Include="plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="plugins\jquery.toast.min.css" />
+    <Content Include="plugins\jquery.toast.min.js" />
     <Content Include="plugins\printThis.js" />
     <Content Include="Login.aspx" />
     <Content Include="Medicamentos.aspx" />
@@ -122,6 +126,8 @@
     <Content Include="plugins\bootstrap\js\npm.js" />
     <Content Include="plugins\jquery\jquery-3.2.1.js" />
     <Content Include="plugins\jquery\jquery-3.2.1.min.js" />
+    <Content Include="plugins\sweet-alert.css" />
+    <Content Include="plugins\sweet-alert.min.js" />
     <Content Include="Proveedores.aspx" />
     <Content Include="RegistrarIncidente.aspx" />
     <Content Include="Web.config" />

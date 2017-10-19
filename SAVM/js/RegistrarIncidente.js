@@ -102,3 +102,36 @@ function ListarTipoIncientes() {
         }
     });
 }
+
+function CapturarDatos()
+{
+
+}
+
+$("#btnRegistrarIncidente").click(function (e) {
+    var _ruc = $('#txtRucProveedor').val();
+    var _tipoincidencia = $('#ddlTipoIncidencia').val();
+    var _fechaincidente = $('#txtFecha').val();
+    var _descIncidente = $('#txtDescIncidente').val();
+    var obj = JSON.stringify({
+        ruc: _ruc,
+        tipoincidencia: _tipoincidencia,
+        fecha: _fechaincidente,
+        descripcion: _descIncidente
+    });
+    CapturarDatos();
+    $.ajax({
+        type: "POST",
+        data: obj,
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (respuesta) {
+            alert('Incidente registrado correctamente')
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+        }
+
+
+    });
+});

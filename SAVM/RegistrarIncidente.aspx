@@ -89,14 +89,14 @@
                     <div class="form-inline col-md-4">
                         <label for="">Fecha:</label>&nbsp;&nbsp;&nbsp;
 					
-                        <input type="date" class="form-control">
+                        <input id="txtFecha" type="date" class="form-control">
                     </div>
                 </div>
                 <br>
                 <div>
                     <h4>Descripción del Incidente
                     </h4>
-                    <textarea class="form-control" style="width: 90%">
+                    <textarea id="txtDescIncidente" class="form-control" style="width: 90%">
                     </textarea>
                 </div>
             </fieldset>
@@ -110,7 +110,7 @@
                 <input type="button" class="btn btn-primary" value="Volver">
             </div>
             <div class="col-md-6">
-                <input type="button" class="btn btn-success" value="Registrar Incidente">
+                <input id="#btnRegistrarIncidente" type="button" class="btn btn-success" value="Registrar Incidente">
             </div>
             <br>
             <br>
