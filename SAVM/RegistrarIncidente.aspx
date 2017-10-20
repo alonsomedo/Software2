@@ -110,7 +110,7 @@
                 <input type="button" class="btn btn-primary" value="Volver">
             </div>
             <div class="col-md-6">
-                <input id="#btnRegistrarIncidente" type="button" class="btn btn-success" value="Registrar Incidente">
+                <input id="btnRegistrarIncidente" type="button" class="btn btn-success" value="Registrar Incidente">
             </div>
             <br>
             <br>

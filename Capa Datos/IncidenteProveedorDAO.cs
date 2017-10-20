@@ -57,5 +57,38 @@ namespace Capa_Datos
             }
             return lista;
         }
+
+
+        public bool RegistrarIncidenteProveedor(IncidenteProveedor objIncidente )
+        {
+            bool resultado = false;
+            SqlConnection cn = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+
+                cmd = new SqlCommand("SP_REGISTRARINCIDENTE", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RUC", objIncidente.RucPro);
+                cmd.Parameters.AddWithValue("@DESCRIPCION", objIncidente.Descripcion);
+                cmd.Parameters.AddWithValue("@TIPOINCIDENTE", objIncidente.TipoIncidencia.Descripcion);
+                cmd.Parameters.AddWithValue("@FECHA", objIncidente.FecIncidente);
+                cn.Open();
+                resultado = cmd.ExecuteNonQuery() >= 1 ? true : false;
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return resultado;
+        }
     }
 }

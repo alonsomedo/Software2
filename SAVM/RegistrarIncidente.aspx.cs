@@ -27,6 +27,26 @@ namespace SAVM
             return Lista;
 
         }
+        [WebMethod]
+        public static string RegistrarIncidenteProveedor(string ruc, string tipoincidencia, string fecha, string desIncidente)
+        {
+            bool resultado = false;
+            IncidenteProveedor objIncidente = new IncidenteProveedor()
+            {
+                RucPro = long.Parse(ruc),
+                FecIncidente = fecha,
+                Descripcion = desIncidente.Trim(),
+                TipoIncidencia = new TipoIncidencia()
+                {
+                    Descripcion = tipoincidencia
+                }
+
+            };
+
+            resultado = IncidenteLN.GetInstance().RegistrarIncidenteProveedor(objIncidente);
+            return resultado == true ? "Correcto" : "Incorrecto";
+
+        }
 
       
 
