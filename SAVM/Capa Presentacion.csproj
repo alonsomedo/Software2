@@ -129,6 +129,7 @@
     <Content Include="plugins\sweet-alert.css" />
     <Content Include="plugins\sweet-alert.min.js" />
     <Content Include="Proveedores.aspx" />
+    <Content Include="RegistrarFactura.aspx" />
     <Content Include="RegistrarIncidente.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -182,6 +183,13 @@
     </Compile>
     <Compile Include="Proveedores.aspx.designer.cs">
       <DependentUpon>Proveedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarFactura.aspx.cs">
+      <DependentUpon>RegistrarFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarFactura.aspx.designer.cs">
+      <DependentUpon>RegistrarFactura.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistrarIncidente.aspx.cs">
       <DependentUpon>RegistrarIncidente.aspx</DependentUpon>

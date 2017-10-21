@@ -2,7 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-		<h1>BIENVENIDO AL SISTEMA DE ADQUISICIÓN Y VENTA DE MEDICAMENTOS</h1>
+<div style="color:#115;text-align: center;background-image: url(m.png);font-weight: bold">
+<div style="margin:auto;width: 50%">
+	<h1>Bienvenido al Sistema de Venta</h1>
+	<h2>y Aquisición de Medicamentos</h2>
+    <h3><b>MUNDOFarma</b></h3><hr />
+    <img src="img/m.png" alt="Alternate Text" />
+</div>
+</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>

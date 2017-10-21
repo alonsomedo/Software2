@@ -146,8 +146,8 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Registrar Factura</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Mantener Proveedor</a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i>Registrar Factura</a></li>
+                            <li><a href="Proveedores.aspx"><i class="fa fa-circle-o"></i>Mantener Proveedor</a></li>
                         </ul>
                     </li>
 

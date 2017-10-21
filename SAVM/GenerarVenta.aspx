@@ -77,9 +77,9 @@
                 <legend>Datos de la Venta</legend>
                 <div class="row">
                     <div class="col-md-8 form-inline">
-                        <label>N° de la Venta:</label>&nbsp;&nbsp;&nbsp;
-					
-                        <input type="text" class="form-control" style="width: 100px" id="txtnumventa" disabled>
+
+					<!--NRO VENTA -->
+                        <input type="text" class="form-control" style="width: 100px;visibility: hidden;"  id="txtnumventa" disabled>
                     </div>
 
                     <div class="form-inline col-md-4">
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <br>
-
+                <div class="panel bg-blue-gradient" style="overflow:auto">
                 <table class="table" id="tblDetVenta">
                     <thead>
                         <tr>
@@ -104,6 +104,7 @@
                     <tbody id="tabladetalleventa">
                     </tbody>
                 </table>
+                </div>
                 <br>
                 <br>
                 <br>
@@ -150,7 +151,7 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <p class="statusMsg"></p>
-                    <input type="text" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarMedicamento">
+                    <input type="text" placeholder="Ingrese criterio de búsqueda" onkeyup="changeToUpperCase(this)" class="form-control" id="txtBuscarMedicamento">
                     <br>
                     <table class="table table-bordered">
                         <thead>

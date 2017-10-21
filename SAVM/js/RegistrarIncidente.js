@@ -111,6 +111,17 @@ $("#btnRegistrarIncidente").click(function (e) {
     var _tipoincidencia = $('#ddlTipoIncidencia').val();
     var _fechaincidente = $('#txtFecha').val();
     var _descIncidente = $('#txtDescIncidente').val();
+    
+    if (_ruc == "" || _tipoincidencia == "" || _descIncidente=="")
+    {
+        alert("Busque a un proveedor");
+        return false;
+    }
+    if (_fechaincidente =="")
+    {
+        alert("Ingrese una fecha");
+        return false;
+    }
     var obj = JSON.stringify({
         ruc: _ruc,
         tipoincidencia: _tipoincidencia,

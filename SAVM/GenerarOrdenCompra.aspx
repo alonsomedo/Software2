@@ -31,7 +31,7 @@
 							<input type="text" class="form-control" id="txtrazonsocialOC" disabled>
 							</div>
 							<div class="col-md-6">
-								<input type="button" class="btn btn-primary" value="Registrar Proveedor">
+								<input type="button" class="btn btn-primary" value="Registrar Proveedor" onclick="location.href = '/Proveedores.aspx'">
 							</div>
 						</div><br>
 						Contacto:
@@ -57,7 +57,7 @@
 							<input type="text" class="form-control" id="txtnombreOC" disabled>
 							</div>
 							<div class="col-md-6">
-								<input type="button" class="btn btn-primary" value="Registrar Medicamento">
+								<input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="location.href = '/Medicamentos.aspx'">
 							</div>
 						</div>
 						Precio Unit.:
@@ -79,18 +79,13 @@
 			<div class="row">
 			<fieldset>
 				<legend>Datos de la O/C</legend>
-				<div class="row">
-					<div class="col-md-8 form-inline">
-						<label for="txtnumocOC">N° de O/C:</label>&nbsp;&nbsp;&nbsp;
-						<input type="text" class="form-control" style="width: 100px" id="txtnumocOC" disabled>
-					</div>
-						
-					<div  class="form-inline col-md-4">
+				<div class="row">						
+					<div  class="form-inline col-md-4 col-md-offset-8">
 						<label for="txtfechaOC">Fecha:</label>&nbsp;&nbsp;&nbsp;
 						<input type="text" class="form-control" id="txtfechaOC" disabled>
 					</div>
 				</div><br>
-	
+	            <div class="panel bg-blue-gradient" style="overflow:auto">
 				<table class="table" id="tblDetOC">
 					<thead>
 						<tr>
@@ -106,6 +101,7 @@
 
 					</tbody>
 				</table>
+                </div>
 				<br><br><br><br>
 				<div class="col-md-offset-9 col-md-2">
 						Monto:
@@ -118,8 +114,10 @@
 			</fieldset>
 			</div><br>
 			<div class="row">
+                <!--NUMERO DE ORDEN DE COMPRA -->
+                <input type="text" class="form-control" style="width: 100px; visibility: hidden;" id="txtnumocOC" disabled>
 				<div class="col-md-1">
-					<input type="button" class="btn btn-primary" value="Volver" onClick="location.href='/Index.aspx'">
+					<input type="button" class="btn btn-primary" value="Volver" onClick="location.href = '/Index.aspx'">
 				</div>
 				<div class="col-md-6">
 					<input type="button" class="btn btn-success" value="Grabar e Imprimir" id="btnGrabarOC">
@@ -144,7 +142,7 @@
 					<!-- Modal Body -->
 					<div class="modal-body">
 						<p class="statusMsg"></p>
-                			<input type="text" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarMedicamentoOC">
+                			<input type="text" onkeyup="changeToUpperCase(this)" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarMedicamentoOC">
 							<br>
 							<table class="table table-bordered">
 								<thead>
@@ -189,7 +187,7 @@
 					<!-- Modal Body -->
 					<div class="modal-body">
 						<p class="statusMsg"></p>
-                			<input type="text" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarProveedor">
+                			<input type="text" onkeyup="changeToUpperCase(this)"  placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarProveedor">
 							<br>
 							<table class="table table-bordered">
 								<thead>
