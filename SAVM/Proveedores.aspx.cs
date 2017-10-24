@@ -41,5 +41,34 @@ namespace SAVM
             return incidentes;
         }
 
+
+        [WebMethod]
+        public static Proveedor RegistrarProveedor(string razonsocial,string ruc, string direccion, string correo, string nombre, string paterno, string materno, string telefono)
+        {
+            
+            Proveedor objProveedor = new Proveedor()
+            {
+                RazonSocial = razonsocial,
+                Direccion = direccion,
+                RUC = long.Parse(ruc),
+                Estado = '1',
+                Representante = new RepProveedor()
+                {
+                    Correo = correo,
+                    Nombre = nombre,
+                    Paterno = paterno,
+                    Materno = materno,
+                    Telefono = telefono
+                }
+
+            };
+
+            return objProveedor = ProveedorLN.GetInstance().RegistrarProveedor(objProveedor); 
+
+
+            
+
+        }
+
     }
 }

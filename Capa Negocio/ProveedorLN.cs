@@ -46,5 +46,17 @@ namespace Capa_Negocio
             }
         }
 
+        public Proveedor RegistrarProveedor(Proveedor objProveedor)
+        {
+            try
+            {
+                return ProveedorDAO.GetInstance().RegistrarProveedor(objProveedor);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

@@ -114,12 +114,16 @@ $("#btnRegistrarIncidente").click(function (e) {
     
     if (_ruc == "" || _tipoincidencia == "" || _descIncidente=="")
     {
-        alert("Busque a un proveedor");
+        swal('Ingrese datos del incidente', '',
+            'info'
+        );
         return false;
     }
     if (_fechaincidente =="")
     {
-        alert("Ingrese una fecha");
+        swal('Ingrese datos del incidente', '',
+            'info'
+        );
         return false;
     }
     var obj = JSON.stringify({
@@ -135,7 +139,9 @@ $("#btnRegistrarIncidente").click(function (e) {
         dataType: 'json',
         contentType: 'application/json',
         success: function (respuesta) {
-            alert('Incidente registrado correctamente')
+            swal('Incidente registrado correctamente', '',
+                'success'
+            );
         },
         error: function (xhr, ajaxOptions, thrownError) {
             console.log(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);

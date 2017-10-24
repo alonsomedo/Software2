@@ -84,6 +84,7 @@
     <Content Include="Index.aspx" />
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
+    <Content Include="js\Proveedores.js" />
     <Content Include="js\RegistrarIncidente.js" />
     <Content Include="plugins\datatables\dataTables.bootstrap.min.js" />
     <Content Include="plugins\datatables\jquery.dataTables.min.js" />

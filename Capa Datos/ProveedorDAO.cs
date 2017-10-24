@@ -74,7 +74,7 @@ namespace Capa_Datos
             SqlConnection cn = null;
             SqlDataReader dr = null;
             SqlCommand cmd = null;
-            string nroincidentes="";
+            string nroincidentes = "";
             try
             {
                 cn = Conexion.GetInstance().ConexionDB();
@@ -88,7 +88,7 @@ namespace Capa_Datos
                     nroincidentes = dr[0].ToString();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -97,6 +97,61 @@ namespace Capa_Datos
                 cn.Close();
             }
             return nroincidentes;
+        }
+
+        public Proveedor RegistrarProveedor(Proveedor objProveedor)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            SqlConnection cn = null;
+            Proveedor Proveedor = new Proveedor();
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_REGISTRARPROVEEDOR", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RAZSOCIAL", objProveedor.RazonSocial);
+                cmd.Parameters.AddWithValue("@RUC", objProveedor.RUC);
+                cmd.Parameters.AddWithValue("@DIRECCION", objProveedor.Direccion);
+                cmd.Parameters.AddWithValue("@ESTADO", objProveedor.Estado);
+                //Representante Proveedor
+                cmd.Parameters.AddWithValue("@CORREO", objProveedor.Representante.Correo);
+                cmd.Parameters.AddWithValue("@NOMBRE", objProveedor.Representante.Nombre);
+                cmd.Parameters.AddWithValue("@PATERNO", objProveedor.Representante.Paterno);
+                cmd.Parameters.AddWithValue("@MATERNO", objProveedor.Representante.Materno);
+                cmd.Parameters.AddWithValue("@TELEFONO", objProveedor.Representante.Telefono);
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    
+                    {
+
+                        Proveedor.RUC = Convert.ToInt64(dr[0]);
+                        Proveedor.RazonSocial = Convert.ToString(dr[1]);
+                        Proveedor.Direccion = Convert.ToString(dr[2]);
+                        Proveedor.Representante = new RepProveedor()
+                        {
+
+                            Nombre = Convert.ToString(dr[3]),
+                            Paterno = Convert.ToString(dr[4]),
+                            Materno = Convert.ToString(dr[5]),
+                            Telefono = Convert.ToString(dr[6]),
+                            Correo = Convert.ToString(dr[7]),
+                        };
+
+                    };
+                }
+                return Proveedor;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
     }

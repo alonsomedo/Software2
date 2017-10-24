@@ -56,7 +56,7 @@ $('body').on('click', '#btnAgregar', function (e) {
         return false;
     }
     if (Number($("#txtcantidad").val()) > stockmedicamento) {
-        swal('La cantidad supera el stock del prosucto', '',
+        swal('La cantidad supera el stock del producto', '',
             'error'
         );
         return false;
@@ -268,10 +268,10 @@ $("#btnGrabar").click(function (e) {
     if (flag) {
         ObtenerNroVenta();
         RegistrarVentaAJAX();
+        RegistrarDetalle();
         swal('La venta se grabó exitosamente', '',
             'success'
         );
-        RegistrarDetalle();
         PrintModal();
         Limpiar();
     }

@@ -8,9 +8,11 @@ namespace Capa_Entidades
 {
     public class Proveedor
     {
-		public long RUC { get; set; }
-		public string RazonSocial { get; set; }
+        public long RUC { get; set; }
+        public string RazonSocial { get; set; }
         public string Direccion { get; set; }
-		public bool Estado { get; set; }
-	}
+        public char Estado { get; set; }
+
+        public RepProveedor Representante { get; set; }
+    }
 }
