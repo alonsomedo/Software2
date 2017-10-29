@@ -31,11 +31,11 @@ namespace Capa_Datos
 
 		public SqlConnection ConexionDB()
         {
-            SqlConnection cn = new
-                SqlConnection("Server=tcp:software2.database.windows.net,1433;Initial Catalog=MUNDOFARMA_BD;Persist Security Info=False;User ID=software2;Password=Mundofarma$2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;");
-
             //SqlConnection cn = new
-            //    SqlConnection(@"server = .\SQLEXPRESS; Initial Catalog=MUNDOFARMA_BD; Integrated Security =SSPI");
+            //    SqlConnection("Server=tcp:software2.database.windows.net,1433;Initial Catalog=MUNDOFARMA_BD;Persist Security Info=False;User ID=software2;Password=Mundofarma$2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;");
+
+            SqlConnection cn = new
+                SqlConnection(@"server = .\SQLEXPRESS; Initial Catalog=MUNDOFARMA_BD; Integrated Security =SSPI");
 
             return cn;
 		}

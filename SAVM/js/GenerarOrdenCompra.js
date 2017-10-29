@@ -477,5 +477,5 @@ $("#txtBuscarProveedor").keyup(function () {
 
 function changeToUpperCase(t) {
     var eleVal = document.getElementById(t.id);
-    eleVal.value = eleVal.value.toUpperCase().replace(/ /g, '');
-}
+    eleVal.value = eleVal.value.toUpperCase();
+}//AOAP

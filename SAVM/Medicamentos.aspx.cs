@@ -26,5 +26,14 @@ namespace SAVM
 			Lista = MedicamentoLN.GetInstance().ListarMedicamento();
 			return Lista;
 		}
+
+        public static Medicamento RegistrarMedicamento()
+        {
+            Medicamento objMedicamento = new Medicamento()
+            {
+
+            };
+            return objMedicamento;
+        }
 	}
 }

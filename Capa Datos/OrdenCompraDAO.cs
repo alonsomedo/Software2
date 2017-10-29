@@ -154,6 +154,51 @@ namespace Capa_Datos
 
 			return resultado;
 		}
-		
-	}
+
+        public List<OrdenCompra> ListarOrdenCompra()
+        {
+            SqlConnection cn = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<OrdenCompra> Lista = new List<OrdenCompra>();
+
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_LISTARORDENCOMPRA", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    OrdenCompra objOrdenCompra = new OrdenCompra()
+                    {
+                        CodOrdCompra = dr[0].ToString(),
+                        FecOrdCompra = dr[1].ToString(),
+                        Igv = Convert.ToDecimal(dr[2]),
+                        Total = Convert.ToDecimal(dr[3]),
+                        Proveedor = new Proveedor()
+                        {
+                            RUC = long.Parse(dr[4].ToString()),
+                            RazonSocial = dr[5].ToString()
+                        }
+
+                    };
+                    Lista.Add(objOrdenCompra);
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return Lista;
+        }
+
+
+    }
 }

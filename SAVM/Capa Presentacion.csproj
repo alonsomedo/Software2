@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsultarOrdenCompra.aspx" />
     <Content Include="css\AdminLTE.css" />
     <Content Include="css\estilo.css" />
     <Content Include="css\skins\_all-skins.css" />
@@ -82,12 +83,22 @@
     <Content Include="img\mundofarma.jpg" />
     <Content Include="img\yachi.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="js\ConsultarOrdenCompra.js" />
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
     <Content Include="js\Proveedores.js" />
+    <Content Include="js\RegistrarFactura.js" />
     <Content Include="js\RegistrarIncidente.js" />
+    <Content Include="plugins\datatables\buttons.flash.min.js" />
+    <Content Include="plugins\datatables\buttons.html5.min.js" />
+    <Content Include="plugins\datatables\buttons.print.js" />
     <Content Include="plugins\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="plugins\datatables\dataTables.buttons.js" />
+    <Content Include="plugins\datatables\dataTables.buttons.min.js" />
     <Content Include="plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="plugins\datatables\jszip.min.js" />
+    <Content Include="plugins\datatables\pdfmake.min.js" />
+    <Content Include="plugins\datatables\vfs_fonts.js" />
     <Content Include="plugins\jquery.toast.min.css" />
     <Content Include="plugins\jquery.toast.min.js" />
     <Content Include="plugins\printThis.js" />
@@ -135,6 +146,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultarOrdenCompra.aspx.cs">
+      <DependentUpon>ConsultarOrdenCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultarOrdenCompra.aspx.designer.cs">
+      <DependentUpon>ConsultarOrdenCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GenerarOrdenCompra.aspx.cs">
       <DependentUpon>GenerarOrdenCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -112,7 +112,7 @@
                             <span aria-hidden="true">×</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <h4 class="modal-title">LISTADO DE PROVEEDORES</h4>
+                        <h4 class="modal-title">LISTADO DE PROVEEDORES</h4
                     </div>
 
                     <!-- Modal Body -->
@@ -124,13 +124,13 @@
                             <table class="datatable table table-responsive table-bordered table-hover table-striped" id="tblProveedoresIN">
                                 <thead>
                                     <tr>
-                                        <td>RUC</td>
-                                        <td>Razón Social</td>
-                                        <td>Telefono</td>
-                                        <td>Correo</td>
-                                        <td>Dirección</td>
-                                        <td>Contacto</td>
-                                        <td>Accion</td>
+                                        <th>RUC</th>
+                                        <th>Razón Social</th>
+                                        <th>Telefono</th>
+                                        <th>Correo</th>
+                                        <th>Dirección</th>
+                                        <th>Contacto</th>
+                                        <th>Accion</th>
                                     </tr>
                                 </thead>
                                 <tbody>
