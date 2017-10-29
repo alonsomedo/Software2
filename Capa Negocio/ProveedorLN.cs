@@ -58,5 +58,17 @@ namespace Capa_Negocio
             }
         }
 
+        public void EliminarProveedor(Proveedor objProveedor)
+        {
+            try
+            {
+                ProveedorDAO.GetInstance().EliminarProveedor(objProveedor);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

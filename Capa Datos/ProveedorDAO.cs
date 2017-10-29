@@ -154,5 +154,29 @@ namespace Capa_Datos
             }
         }
 
+        public void EliminarProveedor(Proveedor objProveedor)
+        {
+            SqlConnection cn = null;
+            SqlCommand cmd = null;
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_ELIMINARPROVEEDOR", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RUC", objProveedor.RUC);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
     }
 }

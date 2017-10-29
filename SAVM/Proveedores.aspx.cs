@@ -10,23 +10,23 @@ using System.Web.UI.WebControls;
 
 namespace SAVM
 {
-	public partial class Proveedores : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			if (Session["usuario"] == null)
-			{
-				Response.Redirect("Login.aspx");
-			}
-		}
+    public partial class Proveedores : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
 
-		[WebMethod]
-		public static List<RepProveedor> ListarRepProveedores()
-		{
-			List<RepProveedor> Lista = null;
-			Lista = ProveedorLN.GetInstance().ListarRepProveedores();
-			return Lista;
-		}
+        [WebMethod]
+        public static List<RepProveedor> ListarRepProveedores()
+        {
+            List<RepProveedor> Lista = null;
+            Lista = ProveedorLN.GetInstance().ListarRepProveedores();
+            return Lista;
+        }
 
         [WebMethod]
         public static string CalcularIncidentesProveedor(long _ruc)
@@ -43,9 +43,8 @@ namespace SAVM
 
 
         [WebMethod]
-        public static Proveedor RegistrarProveedor(string razonsocial,string ruc, string direccion, string correo, string nombre, string paterno, string materno, string telefono)
+        public static Proveedor RegistrarProveedor(string razonsocial, string ruc, string direccion, string correo, string nombre, string paterno, string materno, string telefono)
         {
-            
             Proveedor objProveedor = new Proveedor()
             {
                 RazonSocial = razonsocial,
@@ -62,13 +61,21 @@ namespace SAVM
                 }
 
             };
+            return objProveedor = ProveedorLN.GetInstance().RegistrarProveedor(objProveedor);
+        }
+        [WebMethod]
+        public static void EliminarProveedor(string ruc)
+        {
+            Proveedor objProveedor = new Proveedor()
+            {
+                RUC = long.Parse(ruc)
+            };
 
-            return objProveedor = ProveedorLN.GetInstance().RegistrarProveedor(objProveedor); 
+            ProveedorLN.GetInstance().EliminarProveedor(objProveedor);
 
-
-            
 
         }
 
     }
+    
 }

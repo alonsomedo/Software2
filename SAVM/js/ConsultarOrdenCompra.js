@@ -6,15 +6,9 @@ $(document).ready(function () {
         dom: 'BLrtip',
         buttons: [
             {
-                extend: 'copyHtml5',
-                exportOptions: {
-                    columns: [0, ':visible']
-                }
-            },
-            {
                 extend: 'excelHtml5',
                 exportOptions: {
-                    columns:  [0, 1, 2, 3, 4, 5]
+                    columns: [0, 1, 2, 3, 4, 5]
                 }
             },
             {
@@ -26,11 +20,14 @@ $(document).ready(function () {
         ],
         //"dom": 'lrtip', // Oculta el filtro por defecto
         lengthChange: false, //Inhabilitamos el Mostrar10,25,50 primeros
+        paging: true,
         pagingType: "numbers",
         language: {
             search: "Buscar: ",
             searchPlaceholder: "Ingrese el nombre del medicamento",
+            
             lengthMenu: "Mostrar _MENU_ Primeros Resultados",
+            info: "Mostrando página _PAGE_ de _PAGES_"
         }
     });
 
@@ -48,7 +45,7 @@ $(document).ready(function () {
             success: function (respuesta) {
                 console.log(respuesta);
                 var data = respuesta.d;
-                var btnAgregar = "<button id='btnAgregarProveedor' type='button' class='btn btn-success btn-md' style='color:white;'>Agregar</button>";   
+                var btnAgregar = "<button id='btnAgregarProveedor' type='button' class='btn btn-success btn-md' style='color:white;'>Agregar</button>";
                 tabla.clear();    //Limpia la tabla
                 for (var i = 0; i < data.length; i++) {
                     tabla.row.add([

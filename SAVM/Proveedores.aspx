@@ -19,7 +19,7 @@
                             <p>Razón Social:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtRazonSocial" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -29,7 +29,7 @@
                             <p>RUC:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="number" name="name" value="" class="form-control" />
+                            <input id="txtRuc" type="number" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -39,7 +39,7 @@
                             <p>Dirección:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtDireccion" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -50,7 +50,7 @@
                             <p>Correo Electrónico:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtCorreo" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                             <p>Nombre Contacto:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtNombreContacto" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -72,7 +72,7 @@
                             <p>Apellido Paterno:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtPaterno" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -82,7 +82,7 @@
                             <p>Apellido Materno:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtMaterno" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -93,45 +93,40 @@
                             <p>Teléfono:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="number" name="name" value="" class="form-control" />
+                            <input id="txtTelefono" type="number" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
                 </div>
             </div>
         </fieldset>
-        <br>
         <div class="">
-            <input type="button" class="btn btn-success" value=" ➕ Agregar Proveedor">
+            <input id="btnAgregarProveedor" type="button" class="btn btn-success" value=" ➕ Agregar Proveedor">
         </div>
-        <br>
         <br>
 
         <div class="row">
             <div class="col-md-11">
-                <input type="text" name="name" value="" placeholder=" 🔍 Ingrese Medicamento" class="form-control" />
+                <input type="text" id="txtFiltroProveedor" name="name" value="" placeholder=" 🔍 Ingrese RUC/Razon Social del Proveedor" class="form-control" />
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col-md-11" style="overflow: auto; height: 200px">
-                <table class="table" id="">
+            <div class="col-md-11" style="overflow: auto; height: 300px">
+                <table class="table" id="tblProveedores">
                     <thead class="bg-blue-gradient">
                         <tr>
-                            <th>Razón Social</th>
                             <th>RUC</th>
+                            <th>Razón Social</th>
                             <th>Dirección</th>
-                            <th>Stock</th>
-                            <th>Nombre Contacto</th>
-                            <th>Apellido Paterno</th>
-                            <th>Apellido Materno</th>
-                            <th>Teléfono</th>
                             <th>Correo electrónico</th>
-                            <th>Modificar</th>
-                            <th>Eliminar</th>
+                            <th>Contacto</th>
+                            <th>Teléfono</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tbody id="tabladetalleventa">
+                    <tbody id="tBodyProveedor">
                     </tbody>
                 </table>
             </div>
@@ -145,4 +140,5 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="js/Proveedores.js"></script>
 </asp:Content>

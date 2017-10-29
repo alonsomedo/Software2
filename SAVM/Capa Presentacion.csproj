@@ -86,6 +86,7 @@
     <Content Include="js\ConsultarOrdenCompra.js" />
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
+    <Content Include="js\Medicamentos.js" />
     <Content Include="js\Proveedores.js" />
     <Content Include="js\RegistrarFactura.js" />
     <Content Include="js\RegistrarIncidente.js" />
