@@ -36,5 +36,17 @@ namespace Capa_Negocio
             }
         }
 
+        public bool RegistrarDetalleFacturaProveedor(DetalleFacturaProveedor objDetalleFactura)
+        {
+            try
+            {
+                return FacturaProveedorDAO.GetInstance().RegistrarDetalleFacturaProveedor(objDetalleFactura);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

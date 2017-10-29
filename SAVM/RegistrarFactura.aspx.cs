@@ -36,5 +36,28 @@ namespace SAVM
             return resultado = FacturaLN.GetInstance().RegistrarFacturaProveedor(objFactura);
         }
 
+        [WebMethod]
+        public static bool RegistrarDetalleFacturaProveedor(decimal _precio, int _cantidad, decimal _importe, string _nroFactura, string _codMedicamento)
+        {
+            bool resultado = false;
+            DetalleFacturaProveedor objDetalleFactura = new DetalleFacturaProveedor()
+            {
+                FacturaProveedor = new FacturaProveedor()
+                {
+                    NroFactura = _nroFactura
+                },
+                PreUnitario = _precio,
+                Cantidad = _cantidad,
+                Importe = _importe,
+                Medicamento = new Medicamento()
+                {
+                    CodMedicamento = _codMedicamento
+                }
+
+            };
+
+            return resultado = FacturaLN.GetInstance().RegistrarDetalleFacturaProveedor(objDetalleFactura);
+        }
+
     }
 }

@@ -9,8 +9,8 @@ using Capa_Entidades;
 
 namespace Capa_Datos
 {
-	public class FacturaProveedorDAO
-	{
+    public class FacturaProveedorDAO
+    {
         #region "PATRON SINGLETON"
         private static FacturaProveedorDAO objFacturaDAO = null;
         private FacturaProveedorDAO() { }
@@ -42,7 +42,7 @@ namespace Capa_Datos
                 cn.Open();
                 resultado = cmd.ExecuteNonQuery() >= 1 ? true : false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -52,6 +52,37 @@ namespace Capa_Datos
             }
             return resultado;
 
+        }
+
+        public bool RegistrarDetalleFacturaProveedor(DetalleFacturaProveedor objDetalleFactura)
+        {
+            bool resultado = false;
+            SqlCommand cmd = null;
+            SqlConnection cn = null;
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_REGDETALLEFACTURA", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PREUNITARIO", objDetalleFactura.PreUnitario);
+                cmd.Parameters.AddWithValue("@CANTIDAD", objDetalleFactura.Cantidad);
+                cmd.Parameters.AddWithValue("@IMPORTE", objDetalleFactura.Importe);
+                cmd.Parameters.AddWithValue("@NROFACTURA", objDetalleFactura.FacturaProveedor.NroFactura);
+                cmd.Parameters.AddWithValue("@CODMEDICAMENTO", objDetalleFactura.Medicamento.CodMedicamento);
+                cn.Open();
+
+                resultado = cmd.ExecuteNonQuery() >= 1 ? true : false;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
         }
 
 

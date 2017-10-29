@@ -5,11 +5,10 @@
         var flag = ValidarCampos();
         if (flag) {
             RegistrarFacturaAJAX();
-            //RegistrarDetalleFactura();
-            //swal('La venta se grabó exitosamente', '',
-            //    'success'
-            //);
-            //PrintModal();
+            RegistrarDetalleFactura();
+            swal('La venta se grabó exitosamente', '',
+                'success'
+            );
             //Limpiar();
         }
     });
@@ -41,28 +40,28 @@
     }
 
     function RegistrarDetalleFactura() {
-        $("#tabladetalleventa tr").each(function () {
+        $("#tblBodyDetalleFactura tr").each(function () {
             var fila = $(this).closest('tr');
-            var precio = Number(fila.find('td:eq(2)').text());
+            var codMedicamento = fila.find('td:eq(0)').text();
+            var pUnitario = Number(fila.find('td:eq(2)').text());
             var cantidad = Number(fila.find('td:eq(3)').text());
-            var subtotal = Number(fila.find('td:eq(4)').text());
-            var codmedicamento = fila.find('td:eq(0)').text();
-            var codventa = $("#txtnumventa").val();
-            RegistrarDetalleAJAX(precio, cantidad, subtotal, codmedicamento, codventa);
+            var importe = (pUnitario * cantidad).toFixed(2);
+            var nroFactura = $("#txtNumeroFactura").val();
+            RegistrarDetalleAJAX(codMedicamento, pUnitario, cantidad, importe, nroFactura);
         });
     }
 
-    function RegistrarDetalleAJAX(precio, cantidad, subtotal, codmedicamento, codventa) {
+    function RegistrarDetalleAJAX(codMedicamento, pUnitario, cantidad, importe, nroFactura) {
         var obj = JSON.stringify({
-            _precio: precio,
+            _precio: pUnitario,
             _cantidad: cantidad,
-            _subtotal: subtotal,
-            _codmedicamento: codmedicamento,
-            _codventa: codventa
+            _importe: importe,
+            _nroFactura: nroFactura,
+            _codMedicamento: codMedicamento
         });
         $.ajax({
             type: "POST",
-            url: "GenerarVenta.aspx/RegistrarDetalleVenta",
+            url: "RegistrarFactura.aspx/RegistrarDetalleFacturaProveedor",
             data: obj,
             dataType: "json",
             async: false,
@@ -83,11 +82,11 @@
             );
             return false;
         }
-        if ($("#txtNumeroFactura").val() == "")
-        {
+        if ($("#txtNumeroFactura").val() == "") {
             swal('Ingrese el N° de Factura a Registrar', '',
                 'info'
             );
+            return false;
         }
         var filas = Number($('#tblBodyDetalleFactura tr').length);
         if (filas <= 0) {
@@ -220,15 +219,13 @@
 
 
     $('body').on('click', '#btnAgregar', function (e) {
-        if ($("#txtCantidad").val() == "" || $("#txtCantidad").val()<1)
-        {
+        if ($("#txtCantidad").val() == "" || $("#txtCantidad").val() < 1) {
             swal('Ingrese cantidad de medicamento', '',
                 'warning'
             );
             return false;
         }
-        if ($("#txtPrecio").val()=="")
-        {
+        if ($("#txtPrecio").val() == "") {
             swal('Ingrese precio de medicamento', '',
                 'warning'
             );
