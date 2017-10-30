@@ -137,6 +137,7 @@
 
     $("#btnAgregarMedicamento").click(function (e) {
         RegistrarMedicamento();
+        ListarMedicamentos();
     })
 
     function RegistrarMedicamento() {

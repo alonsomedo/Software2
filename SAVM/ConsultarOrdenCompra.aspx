@@ -12,8 +12,8 @@
 
         </div>
         <br>
-        <div class="col-md-11" style="height: 700px; overflow: auto">
-            <table id="tblOrdenCompra" class=" display  table table-condensed ">
+        <div class="col-md-11 panel bg-skyblue-gradient" style="height: 700px; overflow: auto">
+            <table id="tblOrdenCompra" class="table table-condensed ">
                 <thead>
                     <tr>
                         <th>N° de O/C</th>
@@ -50,7 +50,7 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <div>
-                        <table id="tblDetalleOC" class="datatable table table-bordered">
+                        <table id="tblDetalleOC" class=" table table-striped table-bordered dataTable no-footer">
                             <thead>
                                 <tr>
                                     <th>N° Detalle</th>

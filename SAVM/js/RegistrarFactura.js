@@ -88,7 +88,7 @@
             );
             return false;
         }
-        if ($("#txtFecha") == "") {
+        if ($("#txtFecha").val() == "") {
             swal('Ingrese una fecha', '',
                 'info'
             );
