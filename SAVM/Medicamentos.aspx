@@ -39,7 +39,7 @@
                             <p>Prec. Compra Unit.:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="number" name="name" value="" class="form-control" />
+                            <input id="txtPreComUnit" type="number" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -49,7 +49,7 @@
                             <p>Prec. Venta Unit.:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="name" value="" class="form-control" />
+                            <input id="txtPreVenUni" type="text" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -60,7 +60,7 @@
                             <p>Stock:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="number" name="name" value="" class="form-control" />
+                            <input id="txtStock" type="number" name="name" value="" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                             <p>Stock Mínimo:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="number" name="name" value="" class="form-control" />
+                            <input id="txtStockMin" type="number" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br />
@@ -81,7 +81,7 @@
                             <p>Fecha de Vencimiento:</p>
                         </div>
                         <div class="col-md-5">
-                            <input type="date" name="name" value="" class="form-control" />
+                            <input id="txtFecVencimiento" type="date" name="name" value="" class="form-control" />
                         </div>
                     </div>
                     <br>
@@ -91,7 +91,7 @@
                             <p>Tipo de Medicamento:</p>
                         </div>
                         <div class="col-md-5">
-                            <select class="form-control"></select>
+                            <select id="ddlTipoMedicamento" class="form-control"></select>
                         </div>
                     </div>
                     <br>
@@ -101,10 +101,10 @@
                             <p>Proveedor:</p>
                         </div>
                         <div class="col-md-5">
-                            <select class="form-control"></select>
+                            <input id="txtProveedor" type="text" name="name" value="" class="form-control" />
                         </div>
                         <div class="col-md-3">
-                            <input class="btn btn-primary" type="button" name="name" value="Buscar Proveedor" />
+                            <input class="btn btn-primary" id="btnBuscarProveedor" data-toggle="modal" data-target="#modalProveedores" type="button" name="name" value="Buscar Proveedor" />
                         </div>
                     </div>
                     <br>
@@ -113,7 +113,7 @@
         </fieldset>
         <br>
         <div class="">
-            <input type="button" class="btn btn-success" value=" ➕ Agregar Medicamento">
+            <input type="button" id="btnAgregarMedicamento" class="btn btn-success" value=" ➕ Agregar Medicamento">
         </div>
         <br />
         <div class="row">
@@ -152,6 +152,47 @@
             </div>
         </div>
     </div>
+    <!-- Start: Modal Buscar Proveedores-->
+    <div class="modal fade" id="modalProveedores" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg" style="overflow: auto; height: 600px">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Proveedores</h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <input type="text" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtFiltroProveedor">
+                    <br>
+                    <div >
+                        <table id="tblModalProveedores"  class="datatable table table-responsive table-bordered table-hover table-striped">
+                            <thead style="background:#5994f2; color:white">
+                                <tr>
+                                    <th>RUC</th>
+                                    <th>Razón Social</th>
+                                    <th>Telefono</th>
+                                    <th>Correo</th>
+                                    <th>Dirección</th>
+                                    <th>Contacto</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End: Modal Buscar Proveedores-->
+
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script src="js/Medicamentos.js"></script>

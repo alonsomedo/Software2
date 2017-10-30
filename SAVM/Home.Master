@@ -31,7 +31,8 @@
     <link href="img/m.jpg" rel="icon" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini"  onLoad="if ('Navigator' == navigator.appName)
+document.forms[0].reset();">
     <div class="wrapper">
 
         <header class="main-header">

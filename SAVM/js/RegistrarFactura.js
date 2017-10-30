@@ -6,7 +6,7 @@
         if (flag) {
             RegistrarFacturaAJAX();
             RegistrarDetalleFactura();
-            swal('La venta se grabó exitosamente', '',
+            swal('La factura se grabó exitosamente', '',
                 'success'
             );
             //Limpiar();

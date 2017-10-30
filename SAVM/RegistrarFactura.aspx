@@ -129,10 +129,7 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-
                     <div>
-
-
                         <table class="datatable table table-responsive table-bordered table-hover table-striped" id="tblProveedores">
                             <thead>
                                 <tr>
@@ -173,10 +170,7 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <p class="statusMsg"></p>
-                    <input type="text" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarMedicamento">
-                    <br>
                     <div>
-
                         <table id="tblMedicamentos" class="datatable table table-responsive table-bordered table-hover table-striped">
                             <thead>
                                 <tr>
@@ -197,10 +191,6 @@
                     </div>
                 </div>
 
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
             </div>
         </div>
     </div>

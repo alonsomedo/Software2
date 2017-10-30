@@ -36,7 +36,10 @@
                         <input type="text" class="form-control" id="txtrazonsocialOC" disabled>
                     </div>
                     <div class="col-md-6">
-                        <input type="button" data-toggle="modal" data-target="#modalRegPro" class="btn btn-primary" id="btnRegistrarProveedor" value="Registrar Proveedor">
+
+                        
+                        <input type="button" class="btn btn-primary" id="btnRegistrarProveedor" value="Registrar Proveedor" onclick="window.open('Proveedores.aspx')">
+                        <%--<input type="button" data-toggle="modal" data-target="#modalRegPro" class="btn btn-primary" id="btnRegistrarProveedor" value="Registrar Proveedor">--%>
                     </div>
                 </div>
                 <br>
@@ -69,7 +72,8 @@
                         <input type="text" class="form-control" id="txtnombreOC" disabled>
                     </div>
                     <div class="col-md-6">
-                        <input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="location.href = '/Medicamentos.aspx'">
+                        <input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="window.open('Medicamentos.aspx')">
+                  <%--      <input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="location.href = '/Medicamentos.aspx'">--%>
                     </div>
                 </div>
                 Precio Unit.:

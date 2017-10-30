@@ -112,7 +112,7 @@
                             <span aria-hidden="true">×</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <h4 class="modal-title">LISTADO DE PROVEEDORES</h4
+                        <h4 class="modal-title">LISTADO DE PROVEEDORES</h4>
                     </div>
 
                     <!-- Modal Body -->

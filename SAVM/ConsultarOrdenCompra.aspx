@@ -22,7 +22,7 @@
                         <th>Total S/.</th>
                         <th>RUC Proveedor</th>
                         <th>R.Social</th>
-                        <th>Ver</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

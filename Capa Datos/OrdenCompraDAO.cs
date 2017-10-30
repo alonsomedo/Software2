@@ -174,7 +174,7 @@ namespace Capa_Datos
                     OrdenCompra objOrdenCompra = new OrdenCompra()
                     {
                         CodOrdCompra = dr[0].ToString(),
-                        FecOrdCompra = dr[1].ToString(),
+                        FecOrdCompra = DateTime.Parse(dr[1].ToString()).ToShortDateString(),
                         Igv = Convert.ToDecimal(dr[2]),
                         Total = Convert.ToDecimal(dr[3]),
                         Proveedor = new Proveedor()

@@ -76,5 +76,73 @@ namespace Capa_Datos
 
 		}
 
-	}
+        public bool RegistrarMedicamento(Medicamento objMedicamento)
+        {
+            SqlCommand cmd = null;
+            SqlConnection cn = null;
+            bool resultado = false;
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_REGMEDICAMENTO", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CODMEDICAMENTO", objMedicamento.CodMedicamento);
+                cmd.Parameters.AddWithValue("@DESCRIPCION", objMedicamento.Descripcion);
+                cmd.Parameters.AddWithValue("@PRECOMPRA", objMedicamento.PrecioCompra);
+                cmd.Parameters.AddWithValue("@PREVENTA", objMedicamento.PrecioVenta);
+                cmd.Parameters.AddWithValue("@STOCK", objMedicamento.Stock);
+                cmd.Parameters.AddWithValue("@STOCKMINIMO", objMedicamento.StockMinimo);
+                cmd.Parameters.AddWithValue("@FECHA", objMedicamento.FechaVencimiento);
+                cmd.Parameters.AddWithValue("@TIPMEDICAMENTO", objMedicamento.TipoMedicamento.Descripcion);
+                cmd.Parameters.AddWithValue("@RUC", objMedicamento.Proveedor.RUC);
+                cn.Open();
+                resultado = cmd.ExecuteNonQuery() >= 1 ? true : false;
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally {
+                cn.Close();
+            }
+            return resultado;
+        }
+
+        public List<TipoMedicamento> ListarTipoMedicamento()
+        {
+            SqlConnection cn = null;
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            List<TipoMedicamento> lista = new List<TipoMedicamento>();
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_LISTATIPOMEDICAMENTO", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    TipoMedicamento objTipoMedicamento = new TipoMedicamento()
+                    {
+                        IdTipoMedicamento = Convert.ToInt16(dr[0].ToString()),
+                        Descripcion = dr[1].ToString()
+
+                    };
+                    lista.Add(objTipoMedicamento);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return lista;
+        }
+
+    }
 }

@@ -45,7 +45,7 @@ $(document).ready(function () {
             success: function (respuesta) {
                 console.log(respuesta);
                 var data = respuesta.d;
-                var btnAgregar = "<button id='btnAgregarProveedor' type='button' class='btn btn-success btn-md' style='color:white;'>Agregar</button>";
+                var btnDetalleOC = "<button id='btnDetalleOC' type='button' class='btn btn-success btn-md' style='color:white;'>Ver</button>";
                 tabla.clear();    //Limpia la tabla
                 for (var i = 0; i < data.length; i++) {
                     tabla.row.add([
@@ -55,7 +55,7 @@ $(document).ready(function () {
                         data[i].Total,
                         data[i].Proveedor.RUC,
                         data[i].Proveedor.RazonSocial,
-                        btnAgregar
+                        btnDetalleOC
                     ]).draw();
                 }
 
@@ -67,6 +67,14 @@ $(document).ready(function () {
     }
 
     ListarOC();
+
+
+    $("#tblOrdenCompra").on("click", "btnDetalleOC", function (e) {
+        var fila = $(this).closest("tr");
+        var codigoOC = $(fila.find("td:eq(0)").text());
+
+
+    });
 
 
 
