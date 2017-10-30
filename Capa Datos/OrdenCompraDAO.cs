@@ -199,6 +199,50 @@ namespace Capa_Datos
             return Lista;
         }
 
+        public List<DetalleOrdenCompra> ListarDetalleOC(string codOrdenCompra)
+        {
+            SqlConnection cn = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<DetalleOrdenCompra> Lista = new List<DetalleOrdenCompra>();
+
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_DETALLEOC", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CODOC", codOrdenCompra);
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    DetalleOrdenCompra objDetalleOC = new DetalleOrdenCompra()
+                    {
+                        IdDetalle = Convert.ToInt32(dr[0].ToString()),
+                        Medicamento = new Medicamento()
+                        {
+                            CodMedicamento = dr[1].ToString(),
+                            Descripcion = dr[2].ToString()
+                        },
+                        Precio = Convert.ToDecimal(dr[3].ToString()),
+                        Cantidad = Convert.ToInt32(dr[4].ToString()),
+                        Subtotal = Convert.ToDecimal(dr[5].ToString())
+                    };
+                    Lista.Add(objDetalleOC);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return Lista;
+        }
+
 
     }
 }

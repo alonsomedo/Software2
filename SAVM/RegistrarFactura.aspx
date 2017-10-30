@@ -70,7 +70,7 @@
 
                     <div class="form-inline col-md-4">
                         <label for="">Fecha:</label>&nbsp;&nbsp;&nbsp;
-						<input type="date" id="txtFecha" class="form-control">
+						<input id="txtFecha" type="date" id="txtFecha" class="form-control">
                     </div>
                 </div>
                 <br>

@@ -33,6 +33,45 @@
             <input type="button" name="name" class="form-control btn btn-primary" value="Volver" />
         </div>
     </div>
+
+    <!-- Start: Modal Detalle Orden de Compra-->
+    <div class="modal fade" id="modalDetalleOC" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg" style="overflow: auto; height: 500px">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Detalle Orden de Compra</h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div>
+                        <table id="tblDetalleOC" class="datatable table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>N° Detalle</th>
+                                    <th>CodMedicamento</th>
+                                    <th>Medicamento</th>
+                                    <th>P.Unitario</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tBodyDetalleOC">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End: Modal Detalle Orden de Compras-->
+
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script src="js/ConsultarOrdenCompra.js"></script>

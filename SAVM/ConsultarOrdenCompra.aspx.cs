@@ -24,7 +24,21 @@ namespace SAVM
             Lista = OrdenCompraLN.GetInstance().ListarOrdenCompra();
 
             return Lista;
-            
+
         }
+
+        [WebMethod]
+        public static List<DetalleOrdenCompra> ListarDetalleOC(string codOC)
+        {
+            string codOrdenCompra = codOC;
+            List<DetalleOrdenCompra> Lista = null;
+
+            Lista = OrdenCompraLN.GetInstance().ListarDetalleOC(codOrdenCompra);
+
+            return Lista;
+
+        }
+
+        
     }
 }

@@ -88,6 +88,12 @@
             );
             return false;
         }
+        if ($("#txtFecha") == "") {
+            swal('Ingrese una fecha', '',
+                'info'
+            );
+            return false;
+        }
         var filas = Number($('#tblBodyDetalleFactura tr').length);
         if (filas <= 0) {
             swal('Agregue al menos un medicamento a la grilla', '',
@@ -95,6 +101,7 @@
             );
             return false;
         }
+
         return true;
     }
 
@@ -228,6 +235,13 @@
         if ($("#txtPrecio").val() == "") {
             swal('Ingrese precio de medicamento', '',
                 'warning'
+            );
+            return false;
+        }
+        if ($("#txtCodMedicamento").val() == "")
+        {
+            swal('Busque un medicamento', '',
+                'info'
             );
             return false;
         }

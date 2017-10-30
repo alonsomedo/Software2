@@ -71,6 +71,18 @@ namespace Capa_Negocio
             }
         }
 
+        public List<DetalleOrdenCompra> ListarDetalleOC(string codOrdenCompra)
+        {
+            try
+            {
+                return OrdenCompraDAO.GetInstance().ListarDetalleOC(codOrdenCompra);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }
