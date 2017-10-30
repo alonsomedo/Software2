@@ -136,9 +136,23 @@
     //START : REGISTRAR MEDICAMENTO
 
     $("#btnAgregarMedicamento").click(function (e) {
+        Validar();
         RegistrarMedicamento();
         ListarMedicamentos();
     })
+
+    function Validar()
+    {
+        if ($("#txtCodMedicamento").val() == "" || $("#txtNombreMedicamento").val() == "" || $("#txtPreComUnit").val()==""|| $("#txtPreVenUni").val()==""
+            || $("#txtStock").val() == "" || $("#txtStockMin").val() == "" || $("#txtFecVencimiento").val() == "" || $("#ddlTipoMedicamento").val() == "" || $("#txtProveedor").val() == "")
+        {
+            swal('Rellene todos los campos.', '',
+                'info'
+            );
+            return false;
+        }
+ 
+    }
 
     function RegistrarMedicamento() {
         var objMedicamento = JSON.stringify({
