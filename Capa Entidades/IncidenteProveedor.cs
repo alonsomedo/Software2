@@ -13,5 +13,6 @@ namespace Capa_Entidades
         public string Descripcion { get; set; }
         public long RucPro { get; set; }
         public TipoIncidencia TipoIncidencia { get; set; }
+        public Proveedor Proveedor { get; set; }
     }
 }

@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsultarIncidente.aspx" />
     <Content Include="ConsultarOrdenCompra.aspx" />
     <Content Include="css\AdminLTE.css" />
     <Content Include="css\estilo.css" />
@@ -83,6 +84,7 @@
     <Content Include="img\mundofarma.jpg" />
     <Content Include="img\yachi.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="js\ConsultarIncidente.js" />
     <Content Include="js\ConsultarOrdenCompra.js" />
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
@@ -147,6 +149,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultarIncidente.aspx.cs">
+      <DependentUpon>ConsultarIncidente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultarIncidente.aspx.designer.cs">
+      <DependentUpon>ConsultarIncidente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarOrdenCompra.aspx.cs">
       <DependentUpon>ConsultarOrdenCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

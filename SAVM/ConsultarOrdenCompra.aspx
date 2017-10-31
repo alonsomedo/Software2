@@ -12,7 +12,7 @@
 
         </div>
         <br>
-        <div class="col-md-11 panel bg-skyblue-gradient" style="height: 700px; overflow: auto">
+        <div class="col-md-11 panel bg-white-gradient" style="height: 700px; overflow: auto">
             <table id="tblOrdenCompra" class="table table-condensed ">
                 <thead>
                     <tr>

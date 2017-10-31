@@ -143,7 +143,7 @@ document.forms[0].reset();">
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="RegistrarIncidente.aspx"><i class="fa fa-circle-o"></i>Registrar Incidente</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Consultar Incidente</a></li>
+                            <li><a href="ConsultarIncidente.aspx"><i class="fa fa-circle-o"></i>Consultar Incidente</a></li>
                         </ul>
                     </li>
 

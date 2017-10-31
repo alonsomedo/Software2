@@ -90,5 +90,51 @@ namespace Capa_Datos
 
             return resultado;
         }
+
+        public List<IncidenteProveedor> ListarIncidentes()
+        {
+            SqlConnection cn = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<IncidenteProveedor> Lista = new List<IncidenteProveedor>();
+
+            try
+            {
+                cn = Conexion.GetInstance().ConexionDB();
+                cmd = new SqlCommand("SP_LISTARINCIDENTES", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    IncidenteProveedor objIncidentes = new IncidenteProveedor()
+                    {
+                        Proveedor = new Proveedor()
+                        {
+                            RUC = long.Parse(dr[0].ToString()),
+                            RazonSocial = dr[1].ToString(),
+                        },
+                        Descripcion = dr[2].ToString(),
+                        TipoIncidencia = new TipoIncidencia()
+                        {
+                            Descripcion = dr[3].ToString()
+                        },
+                        FecIncidente = Convert.ToDateTime(dr[4].ToString()).ToShortDateString()
+
+                    };
+                    Lista.Add(objIncidentes);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return Lista;
+        }
     }
 }

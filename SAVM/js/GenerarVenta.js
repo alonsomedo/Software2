@@ -273,7 +273,7 @@ $("#btnGrabar").click(function (e) {
             'success'
         );
         PrintModal();
-        Limpiar();
+        //Limpiar();
     }
 });
 
