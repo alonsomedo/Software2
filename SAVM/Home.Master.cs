@@ -13,5 +13,19 @@ namespace SAVM
 		{
 
 		}
-	}
+
+        protected void btnManual_Click(object sender, ImageClickEventArgs e)
+        {
+            string FileName = "Copia de CV.MedinaDonayre.pdf";
+            System.Web.HttpResponse response = System.Web.HttpContext.Current.Response;
+            response.ClearContent();
+            response.Clear();
+            response.ContentType = "application/pdf";
+            response.AppendHeader("Content-Disposition", "attachment; filename=" + FileName + ";");
+            response.TransmitFile(Server.MapPath("~/manual/Copia de CV.MedinaDonayre.pdf"));
+            response.Flush();
+            response.End();
+
+        }
+    }
 }

@@ -74,6 +74,7 @@
     <Content Include="css\skins\_all-skins.min.css" />
     <Content Include="GenerarOrdenCompra.aspx" />
     <Content Include="GenerarVenta.aspx" />
+    <Content Include="img\imgManual.png" />
     <Content Include="img\m.jpg" />
     <Content Include="img\m.png" />
     <Content Include="img\medico.png" />
@@ -121,6 +122,7 @@
     <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Home.Master" />
+    <Content Include="manual\Copia de CV.MedinaDonayre.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\savm - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
