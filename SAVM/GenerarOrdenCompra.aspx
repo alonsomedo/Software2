@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-md-6">
 
-                        
+
                         <input type="button" class="btn btn-primary" id="btnRegistrarProveedor" value="Registrar Proveedor" onclick="window.open('Proveedores.aspx')">
                         <%--<input type="button" data-toggle="modal" data-target="#modalRegPro" class="btn btn-primary" id="btnRegistrarProveedor" value="Registrar Proveedor">--%>
                     </div>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-md-6">
                         <input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="window.open('Medicamentos.aspx')">
-                  <%--      <input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="location.href = '/Medicamentos.aspx'">--%>
+                        <%--      <input type="button" class="btn btn-primary" value="Registrar Medicamento" onclick="location.href = '/Medicamentos.aspx'">--%>
                     </div>
                 </div>
                 Precio Unit.:
@@ -99,7 +99,11 @@
             <fieldset>
                 <legend>Datos de la O/C</legend>
                 <div class="row">
-                    <div class="form-inline col-md-4 col-md-offset-8">
+                    <div class="form-inline col-md-8">
+                        <!--NUMERO DE ORDEN DE COMPRA -->
+                        <input type="text" class="form-control" style="width: 100px;" id="txtnumocOC" disabled="disabled">
+                    </div>
+                    <div class="form-inline col-md-4 ">
                         <label for="txtfechaOC">Fecha:</label>&nbsp;&nbsp;&nbsp;
 					
                         <input type="text" class="form-control" id="txtfechaOC" disabled>
@@ -141,8 +145,7 @@
         </div>
         <br>
         <div class="row">
-            <!--NUMERO DE ORDEN DE COMPRA -->
-            <input type="text" class="form-control" style="width: 100px; visibility: hidden;" id="txtnumocOC" disabled>
+
             <div class="col-md-1">
                 <input type="button" class="btn btn-primary" value="Volver" onclick="location.href = '/Index.aspx'">
             </div>
@@ -409,7 +412,7 @@
                     </fieldset>
                     <br />
                     <div style="text-align: center">
-                        <button type="button" id="btnGrabarProveedor" class="btn btn-primary" >Grabar</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" id="btnGrabarProveedor" class="btn btn-primary">Grabar</button>&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
 
 

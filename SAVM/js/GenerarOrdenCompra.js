@@ -52,6 +52,12 @@ $('body').on('click', '#btnAgregarOC', function (e) {
         );
         return false;
     }
+    if (Number($("#txtcantidadOC").val()) > stockmedicamento) {
+        swal('La cantidad supera el stock del producto', '',
+            'error'
+        );
+        return false;
+    }
     var codmedicamento = $("#txtcodmedicamentoOC").val();
     var medicamento = $("#txtnombreOC").val();
     var precio = $("#txtprecioOC").val();
