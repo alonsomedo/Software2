@@ -29,7 +29,11 @@ $(document).ready(function () {
             searchPlaceholder: "Ingrese el nombre del Proveedor o Ruc",
 
             lengthMenu: "Mostrar _MENU_ Primeros Resultados",
-            info: "Mostrando página _PAGE_ de _PAGES_"
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            infoEmpty: "No hay registros disponibles",
+            zeroRecords: "",
+            emptyTable: "",
+            infoFiltered: ""
         }
     });
 

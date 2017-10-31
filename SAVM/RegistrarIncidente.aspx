@@ -53,7 +53,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-9">
-                                <input type="button" data-toggle="modal" data-target="#modalProveedores" id="btnBuscarProveedor" class="form-control btn btn-info" value="Buscar Proveedor">
+                                <input type="button" data-toggle="modal" data-target="#modalProveedores" id="btnBuscarProveedor" class="form-control btn btn-primary" value="Buscar Proveedor">
                             </div>
                         </div>
                     </div>

@@ -308,32 +308,35 @@ $("#btnGrabarOC").click(function (e) {
     if (flag) {
         ObtenerNroOC();
         RegistrarOCAJAX();
-        swal('La orden de compra se grabó exitosamente', '',
-            'success'
-        );
         RegistrarDetalleOC();
-        PrintModal();
-        LimpiarOC();
+        swal({
+            title: "La orden de compra se grabó con exito.",
+            text: "",
+            type: "success"
+        },
+            function PrintModal() {
+                var codOC = $("#txtnumocOC").val();
+                var razonSocial = $("#txtrazonsocialOC").val();
+                var RUC = $("#txtrucOC").val();
+                var monto = $("#txtmontoOC").val();
+                var igv = $("#txtigvOC").val();
+                var montototal = $("#txtmontototalOC").val();
+                $("#txtRS").val(razonSocial);
+                $("#txtRuc").val(RUC);
+                $("#txtPrtMonto").val(monto);
+                $("#txtPrtIgv").val(igv);
+                $("#txtPrtMontoTotal").val(montototal);
+                $("#nroOC").text(codOC);
+                $("#prtTableDetalleOC").empty();
+                copiarTablaDetalle('tblDetOC', 'prtTableDetalleOC', 0, 1, 2, 3, 4)
+                $("#printOC").printThis();
+            });
+
+        //LimpiarOC();
     }
 });
 
-function PrintModal() {
-    var codOC = $("#txtnumocOC").val();
-    var razonSocial = $("#txtrazonsocialOC").val();
-    var RUC = $("#txtrucOC").val();
-    var monto = $("#txtmontoOC").val();
-    var igv = $("#txtigvOC").val();
-    var montototal = $("#txtmontototalOC").val();
-    $("#txtRS").val(razonSocial);
-    $("#txtRuc").val(RUC);
-    $("#txtPrtMonto").val(monto);
-    $("#txtPrtIgv").val(igv);
-    $("#txtPrtMontoTotal").val(montototal);
-    $("#nroOC").text(codOC);
-    $("#prtTableDetalleOC").empty();
-    copiarTablaDetalle('tblDetOC', 'prtTableDetalleOC', 0, 1, 2, 3, 4)
-    $("#printOC").printThis();
-};
+
 
 
 //Copia la tabla detalle a la tabla del modal
