@@ -24,10 +24,14 @@ $(document).ready(function () {
         pagingType: "numbers",
         language: {
             search: "Buscar: ",
-            searchPlaceholder: "Ingrese el nombre del medicamento",
-            
+            searchPlaceholder: "N° Orden de Compra",
+
             lengthMenu: "Mostrar _MENU_ Primeros Resultados",
-            info: "Mostrando página _PAGE_ de _PAGES_"
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            infoEmpty: "No hay registros disponibles",
+            zeroRecords: "",
+            emptyTable: "",
+            infoFiltered: ""
         }
     });
 
