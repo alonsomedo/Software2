@@ -147,7 +147,7 @@
                 <input type="button" class="btn btn-primary" value="Volver" onclick="location.href = '/Index.aspx'">
             </div>
             <div class="col-md-6">
-                <input type="button" class="btn btn-success" value="Grabar e Imprimir" id="btnGrabarOC">
+                <input type="button" class="btn btn-success" value="Grabar" id="btnGrabarOC">
             </div>
             <br>
             <br>
@@ -418,6 +418,8 @@
         </div>
     </div>
     <!-- End Modal: Registrar Proveedor -->
+
+
 
 
 </asp:Content>

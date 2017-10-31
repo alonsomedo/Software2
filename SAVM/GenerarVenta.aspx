@@ -79,7 +79,7 @@
                     <div class="col-md-8 form-inline">
 
 					<!--NRO VENTA -->
-                        <input type="text" class="form-control" style="width: 100px;visibility: hidden;"  id="txtnumventa" disabled>
+                        <input type="text" class="form-control" style="width: 100px;"  id="txtnumventa" disabled>
                     </div>
 
                     <div class="form-inline col-md-4">
@@ -128,7 +128,7 @@
                 <input type="button" class="btn btn-primary" value="Volver" onclick="location.href = '/Index.aspx'">
             </div>
             <div class="col-md-6">
-                <input type="button" class="btn btn-success" value="Grabar e Imprimir" id="btnGrabar">
+                <input type="button" class="btn btn-success" value="Grabar" id="btnGrabar">
             </div>
             <br>
             <br>
@@ -253,6 +253,44 @@
         </div>
     </div>
     <!-- End Modal: Imprimir -->
+
+        <!-- Start: Modal Proveedores-->
+    <div class="modal fade" id="modalProveedores" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg" style="overflow: auto; height: 600px">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Proveedores</h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p class="statusMsg"></p>
+                    <input type="text" onkeyup="changeToUpperCase(this)" placeholder="Ingrese criterio de búsqueda" class="form-control" id="txtBuscarProveedor">
+                    <br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>RUC</td>
+                                <td>Razón Social</td>
+                                <td>Telefono</td>
+                                <td>Correo</td>
+                                <td>Dirección</td>
+                                <td>Contacto</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaProveedoresModal">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End: Modal Proveedores-->
 
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="footer" runat="server">

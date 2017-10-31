@@ -269,31 +269,35 @@ $("#btnGrabar").click(function (e) {
         ObtenerNroVenta();
         RegistrarVentaAJAX();
         RegistrarDetalle();
-        swal('La venta se grabó exitosamente', '',
-            'success'
-        );
-        PrintModal();
+
+        swal({
+            title: "La venta se genero con éxito",
+            text: "",
+            type: "success"
+        },
+            function PrintModal() {
+                var idventa = $("#txtnumventa").val();
+                var cliente = $("#txtrs").val();
+                var idCliente = $("#txtnumdoc").val();
+                var monto = $("#txtmonto").val();
+                var igv = $("#txtigv").val();
+                var montototal = $("#txtmontototal").val();
+                $("#txtNomCliente").val(cliente);
+                $("#txtIdCliente").val(idCliente);
+                $("#txtPrtMonto").val(monto);
+                $("#txtPrtIgv").val(igv);
+                $("#txtPrtMontoTotal").val(montototal);
+                $("#nroVenta").text(idventa);
+                $("#prtTableDetalleVenta").empty();
+                copiarTablaDetalle('tblDetVenta', 'prtTableDetalleVenta', 0, 1, 2, 3, 4)
+                $("#printVenta").printThis();
+            });
+
         //Limpiar();
     }
 });
 
-function PrintModal() {
-    var idventa = $("#txtnumventa").val();
-    var cliente = $("#txtrs").val();
-    var idCliente = $("#txtnumdoc").val();
-    var monto = $("#txtmonto").val();
-    var igv = $("#txtigv").val();
-    var montototal = $("#txtmontototal").val();
-    $("#txtNomCliente").val(cliente);
-    $("#txtIdCliente").val(idCliente);
-    $("#txtPrtMonto").val(monto);
-    $("#txtPrtIgv").val(igv);
-    $("#txtPrtMontoTotal").val(montototal);
-    $("#nroVenta").text(idventa);
-    $("#prtTableDetalleVenta").empty();
-    copiarTablaDetalle('tblDetVenta', 'prtTableDetalleVenta', 0, 1, 2, 3, 4)
-    $("#printVenta").printThis();
-};
+
 
 
 //Copia la tabla detalle a la tabla del modal
@@ -343,7 +347,7 @@ $("#txtBuscarMedicamento").keyup(function () {
     $(this).unbind('focus');
 }).css({
     "color": "#C0C0C0"
-    });
+});
 
 
 function changeToUpperCase(t) {
