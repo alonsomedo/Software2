@@ -33,191 +33,188 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini" onload="if ('Navigator' == navigator.appName)
 document.forms[0].reset();">
-    <form id="form1" runat="server">
-        <div class="wrapper">
 
-            <header class="main-header">
-                <!-- Logo -->
-                <a href="#" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini">
-                        <img src="img/m.png" alt="Alternate Text" height="45px" width="35px" /></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg">
-                        <img src="img/m.png" alt="Alternate Text" height="45px" width="35px" /><b>MUNDO</b>Farma</span>
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">
+                    <img src="img/m.png" alt="Alternate Text" height="45px" width="35px" /></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <img src="img/m.png" alt="Alternate Text" height="45px" width="35px" /><b>MUNDO</b>Farma</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
                 </a>
-                <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
 
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <li class="user-header">
-                                <asp:ImageButton ID="btnManual" OnClick="btnManual_Click" ImageUrl="~/img/imgManual.png" runat="server" />
-                            </li>
-                            <!-- User Account: style can be found in dropdown.less -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="img/medico.png" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">AEAJBS</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="img/medico.png" class="img-circle" alt="User Image">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
 
-                                        <p>
-                                            AEAJBS
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="img/medico.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs">AEAJBS</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="img/medico.png" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        AEAJBS
                  
                                         <small>Usuario 20142</small>
-                                        </p>
-                                    </li>
-                                    <!-- Menu Body -->
-                                    <li class="user-body">
-                                        <div class="row">
-                                            <div class="col-xs-10 text-center">
-                                                <a href="#">Ventas Realizadas :</a>
-                                                <p>0</p>
-                                            </div>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-10 text-center">
+                                            <a href="#">Ventas Realizadas :</a>
+                                            <p>0</p>
                                         </div>
-                                        <!-- /.row -->
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                    <!-- Sidebar user panel -->
-                    <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="img/medico.png" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <p>Jhonatan Erick Medina</p>
-                            <p>Alza Roquez</p>
-                        </div>
-                    </div>
-                    <br>
-                    <!------------------------------------------- sidebar menu: : style can be found in sidebar.less -->
-                    <ul class="sidebar-menu">
-                        <li class="header">MENU</li>
-                        <!-- -->
-                        <li class="treeview">
-                            <a href="GenerarVenta.aspx">
-                                <i class="fa fa-heartbeat"></i><span>Ventas</span>
-                            </a>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="Medicamentos.aspx">
-                                <i class="fa fa-medkit"></i>
-                                <span>Medicamentos</span>
-                            </a>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>Ordenes de Compra</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="GenerarOrdenCompra.aspx"><i class="fa fa-circle-o"></i>Generar O/C</a></li>
-                                <li><a href="ConsultarOrdenCompra.aspx"><i class="fa fa-circle-o"></i>Consultar O/C</a></li>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
                             </ul>
                         </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-table"></i><span>Incidentes</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="RegistrarIncidente.aspx"><i class="fa fa-circle-o"></i>Registrar Incidente</a></li>
-                                <li><a href="ConsultarIncidente.aspx"><i class="fa fa-circle-o"></i>Consultar Incidente</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-flask"></i><span>Proveedores</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="RegistrarFactura.aspx"><i class="fa fa-circle-o"></i>Registrar Factura</a></li>
-                                <li><a href="Proveedores.aspx"><i class="fa fa-circle-o"></i>Mantener Proveedor</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-edit"></i><span>Reportes</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-circle-o"></i>Ventas</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i>Medicamentos - Stock</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i>Medicamentos - F.Vencimiento</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-user-md"></i><span>Usuarios</span>
-                            </a>
-                        </li>
-
                     </ul>
-                </section>
-                <!-- /.sidebar -->
-            </aside>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="img/medico.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>AEAJBS</p>
+                    </div>
+                </div>
+                <br>
+                <!------------------------------------------- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">MENU</li>
+                    <!-- -->
+                    <li class="treeview">
+                        <a href="GenerarVenta.aspx">
+                            <i class="fa fa-heartbeat"></i><span>Ventas</span>
+                        </a>
+                    </li>
 
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        <small></small>
-                    </h1>
-                    <div class="container body-content">
+                    <li class="treeview">
+                        <a href="Medicamentos.aspx">
+                            <i class="fa fa-medkit"></i>
+                            <span>Medicamentos</span>
+                        </a>
+                    </li>
 
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Ordenes de Compra</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="GenerarOrdenCompra.aspx"><i class="fa fa-circle-o"></i>Generar O/C</a></li>
+                            <li><a href="ConsultarOrdenCompra.aspx"><i class="fa fa-circle-o"></i>Consultar O/C</a></li>
+                        </ul>
+                    </li>
 
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-table"></i><span>Incidentes</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="RegistrarIncidente.aspx"><i class="fa fa-circle-o"></i>Registrar Incidente</a></li>
+                            <li><a href="ConsultarIncidente.aspx"><i class="fa fa-circle-o"></i>Consultar Incidente</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-flask"></i><span>Proveedores</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="RegistrarFactura.aspx"><i class="fa fa-circle-o"></i>Registrar Factura</a></li>
+                            <li><a href="Proveedores.aspx"><i class="fa fa-circle-o"></i>Mantener Proveedor</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-edit"></i><span>Reportes</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i>Ventas</a></li>
+                            <li><a href="ReporteMedicamentoStock.aspx"><i class="fa fa-circle-o"></i>Medicamentos - Stock</a></li>
+                            <li><a href="ReporteMedicamentoVencimiento.aspx"><i class="fa fa-circle-o"></i>Medicamentos - F.Vencimiento</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user-md"></i><span>Usuarios</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    <small></small>
+                </h1>
+                <div class="container body-content">
+
+                    <form id="form1" runat="server">
 
                         <asp:ContentPlaceHolder ID="MainContent" runat="server">
                             <!--- CONTENIDO ---->
                         </asp:ContentPlaceHolder>
 
+                    </form>
 
+                </div>
+            </section>
 
-                    </div>
-                </section>
-
-                <!-- Main content -->
-                <!-- /.content -->
-            </div>
-
-
-            <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-            <div class="control-sidebar-bg"></div>
+            <!-- Main content -->
+            <!-- /.content -->
         </div>
-    </form>
+
+
+        <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+
     <!-- jQuery 2.2.3 -->
     <script src="plugins/jquery/jquery-3.2.1.min.js"></script>
 

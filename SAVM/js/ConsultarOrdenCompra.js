@@ -1,7 +1,5 @@
 ﻿
 $(document).ready(function () {
-
-
     var tabla = $("#tblOrdenCompra").DataTable({
         dom: 'BLrtip',
         buttons: [
@@ -72,7 +70,6 @@ $(document).ready(function () {
 
     ListarOC();
 
-
     $("#tblOrdenCompra").on("click", "#btnDetalleOC", function (e) {
   
 
@@ -132,13 +129,5 @@ $(document).ready(function () {
         });
 
     });
-
-
-
-
-
-
-
-
 });
 

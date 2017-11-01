@@ -15,7 +15,7 @@
         <br>
         <br>
 
-        <div class="col-md-11 panel bg-white-gradient" style="height: 400px; overflow: auto">
+        <div class="col-md-11 panel bg-white-gradient table-responsive">
             <table id="tblIncidentes" class=" datatable table table-condensed">
                 <thead>
                     <tr>

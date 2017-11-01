@@ -90,9 +90,12 @@
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
     <Content Include="js\Medicamentos.js" />
+    <Content Include="plugins\moment.min.js" />
     <Content Include="js\Proveedores.js" />
     <Content Include="js\RegistrarFactura.js" />
     <Content Include="js\RegistrarIncidente.js" />
+    <Content Include="js\ReporteMedicamentosStock.js" />
+    <Content Include="js\ReporteMedicamentosVencimiento.js" />
     <Content Include="plugins\datatables\buttons.flash.min.js" />
     <Content Include="plugins\datatables\buttons.html5.min.js" />
     <Content Include="plugins\datatables\buttons.print.js" />
@@ -148,6 +151,8 @@
     <Content Include="Proveedores.aspx" />
     <Content Include="RegistrarFactura.aspx" />
     <Content Include="RegistrarIncidente.aspx" />
+    <Content Include="ReporteMedicamentoStock.aspx" />
+    <Content Include="ReporteMedicamentoVencimiento.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +233,20 @@
     </Compile>
     <Compile Include="RegistrarIncidente.aspx.designer.cs">
       <DependentUpon>RegistrarIncidente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMedicamentoStock.aspx.cs">
+      <DependentUpon>ReporteMedicamentoStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMedicamentoStock.aspx.designer.cs">
+      <DependentUpon>ReporteMedicamentoStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMedicamentoVencimiento.aspx.cs">
+      <DependentUpon>ReporteMedicamentoVencimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMedicamentoVencimiento.aspx.designer.cs">
+      <DependentUpon>ReporteMedicamentoVencimiento.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

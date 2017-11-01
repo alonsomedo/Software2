@@ -78,7 +78,7 @@
         $("#modalProveedores").modal("toggle");
 
     });
-    
+
 
     var tablaProveedores = $("#tblModalProveedores").DataTable({
         dom: 'lrtip', // Oculta el filtro por defecto
@@ -136,23 +136,23 @@
     //START : REGISTRAR MEDICAMENTO
 
     $("#btnAgregarMedicamento").click(function (e) {
-        Validar();
-        RegistrarMedicamento();
-        ListarMedicamentos();
-    })
 
-    function Validar()
-    {
-        if ($("#txtCodMedicamento").val() == "" || $("#txtNombreMedicamento").val() == "" || $("#txtPreComUnit").val()==""|| $("#txtPreVenUni").val()==""
-            || $("#txtStock").val() == "" || $("#txtStockMin").val() == "" || $("#txtFecVencimiento").val() == "" || $("#ddlTipoMedicamento").val() == "" || $("#txtProveedor").val() == "")
-        {
+        if ($("#txtCodMedicamento").val() == "" || $("#txtNombreMedicamento").val() == "" || $("#txtPreComUnit").val() == "" || $("#txtPreVenUni").val() == ""
+            || $("#txtStock").val() == "" || $("#txtStockMin").val() == "" || $("#txtFecVencimiento").val() == "" || $("#ddlTipoMedicamento").val() == "" || $("#txtProveedor").val() == "") {
             swal('Rellene todos los campos.', '',
                 'info'
             );
             return false;
         }
- 
-    }
+        if ($("#txtCodMedicamento").val().length != 6) {
+            swal('El código del medicamento debe tener 6 dígitos.', '',
+                'error'
+            );
+            return false;
+        }
+        RegistrarMedicamento();
+        ListarMedicamentos();
+    })
 
     function RegistrarMedicamento() {
         var objMedicamento = JSON.stringify({

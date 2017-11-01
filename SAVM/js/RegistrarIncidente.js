@@ -103,29 +103,27 @@ function ListarTipoIncientes() {
     });
 }
 
-
-
-$("#btnRegistrarIncidente").click(function (e) { 
+$("#btnRegistrarIncidente").click(function (e) {
     e.preventDefault();
     var _ruc = $('#txtRucProveedor').val();
     var _tipoincidencia = $('#ddlTipoIncidencia').val();
     var _fechaincidente = $('#txtFecha').val();
     var _descIncidente = $('#txtDescIncidente').val();
-    
-    if (_ruc == "" || _tipoincidencia == "" || _descIncidente=="")
-    {
+
+    if (_ruc == "") {
+        swal('Busque al proveedor del incidente', '',
+            'info'
+        );
+        return false;
+    }
+
+    if (_tipoincidencia == "" || _descIncidente == "" || _fechaincidente == "") {
         swal('Ingrese datos del incidente', '',
             'info'
         );
         return false;
     }
-    if (_fechaincidente =="")
-    {
-        swal('Ingrese datos del incidente', '',
-            'info'
-        );
-        return false;
-    }
+
     var obj = JSON.stringify({
         ruc: _ruc,
         tipoincidencia: _tipoincidencia,
@@ -134,7 +132,7 @@ $("#btnRegistrarIncidente").click(function (e) {
     });
     $.ajax({
         type: "POST",
-        url:'RegistrarIncidente.aspx/RegistrarIncidenteProveedor',
+        url: 'RegistrarIncidente.aspx/RegistrarIncidenteProveedor',
         data: obj,
         dataType: 'json',
         contentType: 'application/json',

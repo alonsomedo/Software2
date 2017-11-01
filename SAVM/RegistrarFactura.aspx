@@ -49,7 +49,7 @@
                 Cantidad:
 						<div class="row">
                             <div class="col-md-3">
-                                <input type="text" id="txtCantidad" class="form-control">
+                                <input type="number" id="txtCantidad" class="form-control">
                             </div>
                             <div class="col-md-6 col-md-offset-3">
                                 <input type="button" id="btnAgregar" class="btn btn-primary" value="Agregar Medicamento">
@@ -96,7 +96,7 @@
                 <br>
                 <div class="col-md-offset-9 col-md-2">
                     Monto Total:
-						<input id="txtmontototal" type="text" class="form-control"><br>
+						<input id="txtmontototal" type="number" class="form-control" disabled="disabled"><br>
                 </div>
             </fieldset>
         </div>

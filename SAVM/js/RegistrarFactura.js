@@ -77,19 +77,19 @@
 
     function ValidarCampos() {
         if ($("#txtRucProveedor").val() == "" || $("#txtRazonSocial").val() == "") {
-            swal('Ingresa datos del proveedor', '',
+            swal('Busque al proveedor de la factura', '',
                 'error'
             );
             return false;
         }
         if ($("#txtNumeroFactura").val() == "") {
-            swal('Ingrese el N° de Factura a Registrar', '',
+            swal('Ingrese  datos de la factura', '',
                 'info'
             );
             return false;
         }
         if ($("#txtFecha").val() == "") {
-            swal('Ingrese una fecha', '',
+            swal('Ingrese datos de la factura', '',
                 'info'
             );
             return false;
@@ -133,11 +133,17 @@
                 var btnAgregar = "<button id='btnAgregarMedicamento' type='button' class='btn btn-success btn-md' style='color:white;'>Agregar</button>";
                 tablaMedicamentos = $("#tblMedicamentos").DataTable({
 
-                    "pagingType": "numbers",
-                    "language": {
-                        "search": "Buscar: ",
-                        "searchPlaceholder": "Ingrese el nombre del medicamento",
-                        "lengthMenu": "Mostrar _MENU_ Primeros Resultados",
+                    pagingType: "numbers",
+                    language: {
+                        search: "Buscar: ",
+                        searchPlaceholder: "Buscar Medicamento",
+
+                        lengthMenu: "Mostrar _MENU_ Primeros Resultados",
+                        info: "Mostrando página _PAGE_ de _PAGES_",
+                        infoEmpty: "No se encontró el Medicamento",
+                        zeroRecords: "",
+                        emptyTable: "",
+                        infoFiltered: ""
                     }
                 });
                 tablaMedicamentos.clear();    //Limpia la tabla
@@ -196,11 +202,17 @@
                 var btnAgregar = "<button id='btnAgregarProveedor' type='button' class='btn btn-success btn-md' style='color:white;'>Agregar</button>";
                 tabla = $("#tblProveedores").DataTable({
 
-                    "pagingType": "numbers",
-                    "language": {
-                        "search": "Buscar: ",
-                        "searchPlaceholder": "Ingrese el nombre del medicamento",
-                        "lengthMenu": "Mostrar _MENU_ Primeros Resultados",
+                    pagingType: "numbers",
+                    language: {
+                        search: "Buscar: ",
+                        searchPlaceholder: "Buscar Proveedor",
+
+                        lengthMenu: "Mostrar _MENU_ Primeros Resultados",
+                        info: "Mostrando página _PAGE_ de _PAGES_",
+                        infoEmpty: "No se encontró el Proveedor",
+                        zeroRecords: "",
+                        emptyTable: "",
+                        infoFiltered: ""
                     }
                 });
                 tabla.clear();    //Limpia la tabla
@@ -227,20 +239,19 @@
 
     $('body').on('click', '#btnAgregar', function (e) {
         if ($("#txtCantidad").val() == "" || $("#txtCantidad").val() < 1) {
-            swal('Ingrese cantidad de medicamento', '',
+            swal('Ingrese la cantidad de medicamento', '',
                 'warning'
             );
             return false;
         }
-        if ($("#txtPrecio").val() == "") {
-            swal('Ingrese precio de medicamento', '',
+        if ($("#txtPrecio").val() == "" || $("#txtPrecio").val() < 0) {
+            swal('Ingrese el precio de medicamento', '',
                 'warning'
             );
             return false;
         }
-        if ($("#txtCodMedicamento").val() == "")
-        {
-            swal('Busque un medicamento', '',
+        if ($("#txtCodMedicamento").val() == "") {
+            swal('Busque el medicamento a agregar', '',
                 'info'
             );
             return false;
@@ -262,6 +273,8 @@
         ActualizarMontosSumar(total);
         Limpiar();
     });
+
+
 
     function Limpiar() {
         $("#txtCodMedicamento").val("");

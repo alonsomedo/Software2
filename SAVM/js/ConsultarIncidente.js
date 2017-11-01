@@ -1,9 +1,6 @@
 ﻿
 $(document).ready(function () {
-
-
     ListarIncidentes();
-
     var tabla = $("#tblIncidentes").DataTable({
         dom: 'BLrtip',
         buttons: [
@@ -68,10 +65,5 @@ $(document).ready(function () {
             }
         });
     }
-
- 
-
-   
-
 });
 
