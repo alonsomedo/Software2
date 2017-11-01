@@ -6,9 +6,7 @@
         if (flag) {
             RegistrarFacturaAJAX();
             RegistrarDetalleFactura();
-            swal('La factura se grabó exitosamente', '',
-                'success'
-            );
+
             //Limpiar();
         }
     });
@@ -32,9 +30,15 @@
             error: function (xhr, ajaxOptions, thrownError) {
                 console.log(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
                 resultado = false;
+                swal('La factura ya existe', '',
+                    'error'
+                );
             },
             success: function (respuesta) {
-                console.log(respuesta.d)
+                console.log(respuesta.d);
+                swal('La factura se grabó exitosamente', '',
+                    'success'
+                );
             }
         });
     }

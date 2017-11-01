@@ -10,17 +10,38 @@
     });
 
     var tabla = $("#tblMedicamentos").DataTable({
-        dom: 'lrtip', // Oculta el filtro por defecto
+        dom: 'BLrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                }
+                
+
+            }
+        ],
+        //"dom": 'lrtip', // Oculta el filtro por defecto
         lengthChange: false, //Inhabilitamos el Mostrar10,25,50 primeros
-        paging: false, //Inhabilitamos paginación
+        paging: true,
         pagingType: "numbers",
-        info: false,
         language: {
-            //search: "Buscar: ",
-            //searchPlaceholder: "Ingrese el nombre del proveedor",
-            //lengthMenu: "Mostrar _MENU_ Primeros Resultados",
-            //paging: false
-            //info: "Mostrando página _PAGE_ de _PAGES_"
+            search: "Buscar: ",
+            searchPlaceholder: "N° Orden de Compra",
+
+            lengthMenu: "Mostrar _MENU_ Primeros Resultados",
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            infoEmpty: "No hay registros disponibles",
+            zeroRecords: "",
+            emptyTable: "",
+            infoFiltered: ""
         }
 
     });

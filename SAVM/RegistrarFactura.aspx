@@ -44,7 +44,7 @@
                             </div>
                 Precio:
 						<div style="width: 115px">
-                            <input type="text" id="txtPrecio" class="form-control">
+                            <input type="number" id="txtPrecio" class="form-control">
                         </div>
                 Cantidad:
 						<div class="row">
