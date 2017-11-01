@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="GenerarOrdenCompra.aspx.cs" ClientIDMode="Static"
     Inherits="SAVM.GenerarOrdenCompra" %>
-
+<%@ OutputCache Location="None" NoStore="true" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content_GOC" ContentPlaceHolderID="MainContent" runat="server">

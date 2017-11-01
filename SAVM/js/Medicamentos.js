@@ -208,9 +208,6 @@
             }
         });
     }
-
-
-
     // END: LISTAR TIPOS DE MEDICAMENTOS
 
 });

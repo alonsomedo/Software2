@@ -14,11 +14,20 @@ namespace SAVM
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (Session["usuario"] == null)
-			{
-				Response.Redirect("Login.aspx");
-			}
-		}
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else if (Session["usuario"] != null)
+            {
+                int idRolUsuario = Convert.ToInt32(Session["perfilUsuario"]);
+                if (idRolUsuario == 3 || idRolUsuario == 2)
+                {
+                    Response.Redirect("Index.aspx");
+                }
+
+            }
+        }
 
 		[WebMethod]
 		public static string GenerarNroOC()

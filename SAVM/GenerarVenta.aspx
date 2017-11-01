@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="GenerarVenta.aspx.cs" ClientIDMode="Static"
     Inherits="SAVM.GenerarVenta" %>
-
+<%@ OutputCache Location="None" NoStore="true" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content_GV" ContentPlaceHolderID="MainContent" runat="server">

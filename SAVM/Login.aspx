@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SAVM.Login" %>
-
+<%@ OutputCache Location="None" NoStore="true" %>
 <!DOCTYPE html>
 
 <html class="bg-black" xmlns="http://www.w3.org/1999/xhtml">

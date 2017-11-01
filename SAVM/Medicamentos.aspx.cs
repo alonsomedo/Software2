@@ -18,6 +18,15 @@ namespace SAVM
             {
                 Response.Redirect("Login.aspx");
             }
+            else if (Session["usuario"] != null)
+            {
+                int idRolUsuario = Convert.ToInt32(Session["perfilUsuario"]);
+                if (idRolUsuario == 3 || idRolUsuario == 4)
+                {
+                    Response.Redirect("Index.aspx");
+                }
+
+            }
 
         }
         [WebMethod]

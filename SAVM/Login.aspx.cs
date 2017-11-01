@@ -1,6 +1,7 @@
 ﻿using Capa_Entidades;
 using Capa_Negocio;
 using System;
+using System.Web.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,12 +28,21 @@ namespace SAVM
 			if (ObjEmpleado != null)
 			{
 				Session["usuario"] = ObjEmpleado.Username;
-				Response.Redirect("Index.aspx");
+                Session["perfilUsuario"] = ObjEmpleado.RolUsuario.IdRolUsuario;
+                Response.Redirect("Index.aspx");
 			}
 			else
 			{
 				Response.Write("<script>alert('Verifique su usuario y contraseña')</script>");
 			}
 		}
-	}
+        [WebMethod]
+        public static bool CerrarSesion()
+        {
+            HttpContext.Current.Session.Abandon();
+            return true;
+        }
+
+
+    }
 }

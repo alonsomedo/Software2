@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="ConsultarOrdenCompra.aspx.cs" ClientIDMode="Static" Inherits="SAVM.ConsultarOrdenCompra" %>
+<%@ OutputCache Location="None" NoStore="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

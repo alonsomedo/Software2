@@ -89,6 +89,7 @@
     <Content Include="js\ConsultarOrdenCompra.js" />
     <Content Include="js\GenerarOrdenCompra.js" />
     <Content Include="js\GenerarVenta.js" />
+    <Content Include="js\HomeMaster.js" />
     <Content Include="js\Medicamentos.js" />
     <Content Include="plugins\moment.min.js" />
     <Content Include="js\Proveedores.js" />

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="RegistrarIncidente.aspx.cs" ClientIDMode="Static"
     Inherits="SAVM.RegistrarIncidente" %>
-
+<%@ OutputCache Location="None" NoStore="true" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content_RI" ContentPlaceHolderID="MainContent" runat="server">
