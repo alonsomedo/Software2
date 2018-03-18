@@ -26,8 +26,13 @@ function ListarProveedoresIN() {
                 "pagingType": "numbers",
                 "language": {
                     "search": "Buscar: ",
-                    "searchPlaceholder": "Ingrese el nombre del medicamento",
+                    "searchPlaceholder": "Buscar Proveedor",
                     "lengthMenu": "Mostrar _MENU_ Primeros Resultados",
+                    info: "Mostrando página _PAGE_ de _PAGES_",
+                    infoEmpty: "Proveedor no encontrado",
+                    zeroRecords: "",
+                    emptyTable: "",
+                    infoFiltered: ""
                 }
             });
             tabla.clear();    //Limpia la tabla

@@ -17,11 +17,15 @@
         pagingType: "numbers",
         info: false,
         language: {
-            //search: "Buscar: ",
-            //searchPlaceholder: "Ingrese el nombre del proveedor",
-            //lengthMenu: "Mostrar _MENU_ Primeros Resultados",
-            //paging: false
-            //info: "Mostrando página _PAGE_ de _PAGES_"
+            search: "Buscar: ",
+            searchPlaceholder: "Ingrese el nombre del Proveedor o Ruc",
+
+            lengthMenu: "Mostrar _MENU_ Primeros Resultados",
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            infoEmpty: "Medicamento no encontrado",
+            zeroRecords: "",
+            emptyTable: "",
+            infoFiltered: ""
         }
 
     });
@@ -85,13 +89,12 @@
         lengthChange: false, //Inhabilitamos el Mostrar10,25,50 primeros
         paging: false, //Inhabilitamos paginación
         pagingType: "numbers",
-        info: false,
+        info: true,
         language: {
-            //search: "Buscar: ",
-            //searchPlaceholder: "Ingrese el nombre del proveedor",
-            //lengthMenu: "Mostrar _MENU_ Primeros Resultados",
-            //paging: false
-            //info: "Mostrando página _PAGE_ de _PAGES_"
+            infoEmpty: "Proveedor no encontrado",
+            zeroRecords: "",
+            emptyTable: "",
+            infoFiltered: ""
         }
 
     });
