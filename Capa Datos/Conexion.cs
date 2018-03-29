@@ -31,9 +31,7 @@ namespace Capa_Datos
 
 		public SqlConnection ConexionDB()
         {
-            //SqlConnection cn = new
-            //    SqlConnection("Server=tcp:software2.database.windows.net,1433;Initial Catalog=MUNDOFARMA_BD;Persist Security Info=False;User ID=software2;Password=Mundofarma$2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;");
-
+         
             SqlConnection cn = new
                 SqlConnection(@"server = 192.168.1.60; Initial Catalog=MUNDOFARMA_BD; user id=admin;password=admin");
 
